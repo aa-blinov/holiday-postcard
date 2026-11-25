@@ -1,13 +1,9 @@
 name: ci
 
-# Install, test, build. Replace the commands with the stack's own; keep the
-# structure. The house-style check is a separate workflow, so that a failure
-# of the standard is visibly different from a failure of the code.
+# Install, test, build. This project is static: the browser is the runtime and
+# there is no bundler. The house-style check lives in its own workflow.
 
 on:
-  # Every branch, because the default branch of a repository in this
-  # collection is not always main: most are on master, and one is on prod.
-  # A filter on main would mean the check never ran.
   push:
   pull_request:
   workflow_dispatch:
@@ -24,22 +20,19 @@ jobs:
     name: Check and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      # Replace this block with the stack's toolchain.
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          python-version: '3.12'
+          persist-credentials: false
 
-      - name: Install
-        run: |
-          python3 -m pip install --upgrade pip
-          # pip install -e '.[dev]'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Test
-        # run: python3 -m pytest -q
-        run: echo "Replace with the test command for this stack."
+      - name: Check syntax
+        run: node --check app.js
 
-      - name: Build
-        # run: python3 -m build
-        run: echo "Replace with the build command for this stack."
+      - name: Check label contrast
+        run: node tools/verify-contrast.mjs
+
+      - name: Check HTML and CSS are present
+        run: test -f index.html && test -f styles.css && test -f assets/favicon.svg
