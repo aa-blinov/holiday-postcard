@@ -8,6 +8,14 @@ All notable changes to holiday-postcard. Versions are ordered newest first.
 
 - Nothing yet.
 
+## 0.5.3 — 2026-11-26
+
+### Changed
+
+- Snowstorm gained layered snowfall, wind gusts and lit cabins.
+- Forest gained three depth planes of pines, mist bands and a cabin.
+- Railway gained a train, station canopy, telegraph wires, signals and distant hills.
+
 ## 0.5.2 — 2026-11-26
 
 ### Changed

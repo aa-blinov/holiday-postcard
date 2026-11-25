@@ -89,7 +89,10 @@
     {
       kind: "snowstorm", seed: 731,
       moon: [1040, 316], radius: 38, snow: 118, cross: 0.14,
+      farSnow: 96, nearSnow: 22, gusts: 5,
       trees: [[150, 556, 0.8], [286, 572, 0.6], [846, 562, 0.7], [1040, 578, 0.9]],
+      cabins: [[560, 548], [612, 556]],
+      hills: [[64, 600], [180, 566], [340, 588], [520, 552], [700, 584], [880, 550], [1030, 582], [1136, 558], [1136, 600]],
       drifts: [[64, 600], [220, 560], [420, 584], [620, 548], [830, 586], [1020, 552], [1136, 580], [1136, 600]]
     },
     {
@@ -101,8 +104,11 @@
     {
       kind: "forest", seed: 89,
       moon: [600, 356], radius: 68, snow: 52, cross: 0.30,
+      mist: [430, 466, 502],
       farPines: [[110, 540, 0.5], [190, 548, 0.6], [270, 534, 0.55], [360, 550, 0.65], [450, 538, 0.5], [560, 552, 0.6], [670, 536, 0.55], [780, 548, 0.65], [890, 540, 0.5], [1000, 550, 0.6], [1090, 538, 0.55]],
-      nearPines: [[150, 590, 1.25], [390, 600, 1.4], [640, 594, 1.3], [900, 600, 1.45], [1100, 590, 1.2]]
+      midPines: [[70, 576, 0.85], [250, 570, 0.95], [470, 580, 0.8], [700, 572, 0.9], [930, 580, 0.85], [1130, 570, 0.95]],
+      nearPines: [[150, 590, 1.25], [390, 600, 1.4], [640, 594, 1.3], [900, 600, 1.45], [1100, 590, 1.2]],
+      cabin: [820, 558]
     },
     {
       kind: "aurora", seed: 421,
@@ -112,7 +118,11 @@
     {
       kind: "railway", seed: 613,
       moon: [880, 330], radius: 44, snow: 42, cross: 0.24,
-      vanishing: [600, 470], poles: [[1040, 566, 1.1], [900, 524, 0.8], [800, 500, 0.58], [730, 484, 0.4]]
+      vanishing: [600, 470],
+      hills: [[64, 470], [180, 424], [320, 456], [460, 408], [600, 452], [760, 414], [920, 458], [1080, 420], [1136, 450], [1136, 470]],
+      poles: [[1040, 566, 1.1], [900, 524, 0.8], [800, 500, 0.58], [730, 484, 0.4]],
+      platform: [[740, 590], [780, 550], [1136, 550], [1136, 600]],
+      signals: [[1010, 520, 0.9], [860, 492, 0.6]]
     },
     {
       kind: "celebration", seed: 777,
@@ -582,6 +592,16 @@
       c.moveTo(x, y);
       c.lineTo(x + reach, y - 16 * scale);
       c.stroke();
+      c.strokeStyle = "rgba(232, 243, 245, 0.48)";
+      c.lineWidth = 1 * scale;
+      c.beginPath();
+      c.moveTo(x - reach + 3 * scale, y - 13 * scale);
+      c.lineTo(x - reach + 9 * scale, y - 16 * scale);
+      c.moveTo(x + reach - 3 * scale, y - 15 * scale);
+      c.lineTo(x + reach - 9 * scale, y - 18 * scale);
+      c.stroke();
+      c.strokeStyle = "rgba(217, 230, 234, 0.34)";
+      c.lineWidth = 1.2 * scale;
     }
   }
 
@@ -644,6 +664,24 @@
   function drawSnowstorm(c, s) {
     const rand = seeded(s.seed);
     moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+
+    c.fillStyle = "rgba(217, 230, 234, 0.10)";
+    for (let i = 0; i < s.farSnow; i++) {
+      const x = 64 + rand() * 1072;
+      const y = 150 + rand() * 370;
+      c.fillRect(x, y, 1.5, 1.5);
+    }
+
+    c.lineWidth = 3;
+    for (let i = 0; i < s.gusts; i++) {
+      const y = 210 + i * 62 + rand() * 18;
+      c.strokeStyle = `rgba(217, 230, 234, ${0.05 + i * 0.012})`;
+      c.beginPath();
+      c.moveTo(64, y + 26);
+      c.bezierCurveTo(320, y - 24, 660, y + 52, 1136, y - 14);
+      c.stroke();
+    }
+
     c.strokeStyle = "rgba(217, 230, 234, 0.26)";
     c.lineWidth = 1;
     for (let i = 0; i < s.snow; i++) {
@@ -655,7 +693,21 @@
       c.lineTo(x + length, y + length * 0.8);
       c.stroke();
     }
+    c.strokeStyle = "rgba(232, 243, 245, 0.46)";
+    c.lineWidth = 1.6;
+    for (let i = 0; i < s.nearSnow; i++) {
+      const x = 40 + rand() * 1120;
+      const y = 150 + rand() * 450;
+      const length = 24 + rand() * 20;
+      c.beginPath();
+      c.moveTo(x, y);
+      c.lineTo(x + length, y + length * 0.78);
+      c.stroke();
+    }
+
+    filledShape(c, s.hills, "rgba(194, 31, 46, 0.07)");
     filledShape(c, s.drifts, "rgba(194, 31, 46, 0.13)", "rgba(217, 230, 234, 0.26)");
+    s.cabins.forEach(([x, y]) => cabin(c, x, y));
     s.trees.forEach(([x, y, scale]) => bareTree(c, x, y, scale));
   }
 
@@ -688,10 +740,33 @@
 
   function drawForest(c, s) {
     const rand = seeded(s.seed);
-    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    const [mx, my] = s.moon;
+
+    c.strokeStyle = "rgba(217, 230, 234, 0.07)";
+    c.lineWidth = 1;
+    for (const r of [s.radius + 24, s.radius + 44]) {
+      c.beginPath(); c.arc(mx, my, r, 0, Math.PI * 2); c.stroke();
+    }
+    moonDisc(c, mx, my, s.radius, false);
     snowField(c, rand, s.snow, s.cross);
+
     s.farPines.forEach(([x, y, scale]) => pine(c, x, y, scale, "rgba(217, 230, 234, 0.10)"));
+
+    s.mist.forEach((y, i) => {
+      c.beginPath();
+      c.moveTo(64, y + 16);
+      c.bezierCurveTo(300, y - 20, 620, y + 30, 1136, y - 12);
+      c.lineTo(1136, y + 34);
+      c.bezierCurveTo(760, y + 70, 380, y + 18, 64, y + 52);
+      c.closePath();
+      c.fillStyle = `rgba(217, 230, 234, ${0.035 + i * 0.012})`;
+      c.fill();
+    });
+
     filledShape(c, [[64, 600], [280, 582], [560, 594], [860, 580], [1136, 592], [1136, 600]], "rgba(194, 31, 46, 0.10)");
+    s.midPines.forEach(([x, y, scale]) => pine(c, x, y, scale, "rgba(31, 58, 64, 0.86)"));
+    cabin(c, s.cabin[0], s.cabin[1]);
+    filledShape(c, [[64, 600], [240, 588], [520, 598], [820, 586], [1136, 596], [1136, 600]], "rgba(10, 17, 24, 0.80)");
     s.nearPines.forEach(([x, y, scale]) => pine(c, x, y, scale));
   }
 
@@ -733,7 +808,16 @@
   function drawRailway(c, s) {
     const rand = seeded(s.seed);
     const [vx, vy] = s.vanishing;
-    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    const [mx, my] = s.moon;
+
+    filledShape(c, s.hills, "rgba(194, 31, 46, 0.09)", "rgba(217, 230, 234, 0.16)");
+    c.strokeStyle = "rgba(217, 230, 234, 0.10)";
+    c.lineWidth = 1;
+    for (const r of [s.radius + 18, s.radius + 34]) {
+      c.beginPath(); c.arc(mx, my, r, 0, Math.PI * 2); c.stroke();
+    }
+    moonDisc(c, mx, my, s.radius, false);
+
     c.strokeStyle = "rgba(217, 230, 234, 0.34)";
     c.lineWidth = 1;
     for (const railX of [300, 900]) {
@@ -742,8 +826,8 @@
       c.lineTo(vx, vy);
       c.stroke();
     }
-    for (let i = 0; i < 15; i++) {
-      const t = (i / 14) ** 1.7;
+    for (let i = 0; i < 18; i++) {
+      const t = (i / 17) ** 1.7;
       const y = 600 - t * (600 - vy);
       const half = (300 - t * (300 - vx)) * 0.5 + 22;
       c.beginPath();
@@ -751,16 +835,53 @@
       c.lineTo(vx + half, y);
       c.stroke();
     }
-    c.fillStyle = "rgba(10, 17, 24, 0.92)";
-    c.fillRect(vx - 30, vy - 22, 60, 22);
+    filledShape(c, [[64, 600], [240, 590], [420, 596], [600, 582], [820, 594], [1136, 584], [1136, 600]], "rgba(217, 230, 234, 0.05)");
+
+    c.fillStyle = "rgba(10, 17, 24, 0.94)";
+    c.fillRect(vx - 34, vy - 18, 68, 18);
     c.beginPath();
-    c.moveTo(vx - 38, vy - 22);
-    c.lineTo(vx, vy - 36);
-    c.lineTo(vx + 38, vy - 22);
+    c.moveTo(vx - 42, vy - 18);
+    c.lineTo(vx, vy - 34);
+    c.lineTo(vx + 42, vy - 18);
     c.closePath();
     c.fill();
+    for (let i = 0; i < 3; i++) {
+      c.fillStyle = C.signal;
+      c.fillRect(vx - 22 + i * 16, vy - 13, 7, 6);
+    }
+
+    c.fillStyle = "rgba(10, 17, 24, 0.96)";
+    c.fillRect(vx - 96, vy - 66, 132, 46);
+    c.beginPath();
+    c.moveTo(vx - 96, vy - 66);
+    c.lineTo(vx - 78, vy - 82);
+    c.lineTo(vx + 22, vy - 82);
+    c.lineTo(vx + 36, vy - 66);
+    c.closePath();
+    c.fill();
+    for (let i = 0; i < 5; i++) {
+      c.fillStyle = i === 4 ? C.signal : "rgba(217, 230, 234, 0.72)";
+      c.fillRect(vx - 84 + i * 24, vy - 56, 14, 12);
+    }
+    c.strokeStyle = "rgba(255, 107, 107, 0.30)";
+    c.lineWidth = 1;
+    c.beginPath();
+    c.arc(vx + 36, vy - 44, 16, 0, Math.PI * 2);
+    c.stroke();
     c.fillStyle = C.signal;
-    c.fillRect(vx - 3, vy - 16, 6, 6);
+    c.beginPath(); c.arc(vx + 36, vy - 44, 5, 0, Math.PI * 2); c.fill();
+
+    filledShape(c, s.platform, "rgba(10, 17, 24, 0.88)", "rgba(217, 230, 234, 0.24)");
+    c.strokeStyle = C.signal;
+    c.lineWidth = 2;
+    c.beginPath(); c.moveTo(784, 550); c.lineTo(1136, 550); c.stroke();
+    c.strokeStyle = "rgba(217, 230, 234, 0.28)";
+    c.lineWidth = 1;
+    for (const x of [840, 980, 1110]) {
+      c.beginPath(); c.moveTo(x, 550); c.lineTo(x, 470); c.stroke();
+    }
+    c.beginPath(); c.moveTo(780, 470); c.lineTo(1136, 462); c.stroke();
+
     s.poles.forEach(([x, base, scale]) => {
       c.strokeStyle = "rgba(217, 230, 234, 0.30)";
       c.lineWidth = 2 * scale;
@@ -771,6 +892,29 @@
       c.lineTo(x + 18 * scale, base - 72 * scale);
       c.stroke();
     });
+    c.strokeStyle = "rgba(217, 230, 234, 0.20)";
+    c.lineWidth = 1;
+    for (let i = 0; i < s.poles.length - 1; i++) {
+      const [x1, b1, k1] = s.poles[i];
+      const [x2, b2, k2] = s.poles[i + 1];
+      c.beginPath();
+      c.moveTo(x1, b1 - 72 * k1);
+      c.quadraticCurveTo((x1 + x2) / 2, Math.max(b1 - 72 * k1, b2 - 72 * k2) + 14, x2, b2 - 72 * k2);
+      c.stroke();
+    }
+
+    s.signals.forEach(([x, base, scale]) => {
+      c.strokeStyle = "rgba(217, 230, 234, 0.34)";
+      c.lineWidth = 2 * scale;
+      c.beginPath(); c.moveTo(x, base); c.lineTo(x, base - 58 * scale); c.stroke();
+      c.fillStyle = "rgba(10, 17, 24, 0.95)";
+      c.fillRect(x - 7 * scale, base - 78 * scale, 14 * scale, 26 * scale);
+      c.fillStyle = C.signal;
+      c.beginPath(); c.arc(x, base - 71 * scale, 3.5 * scale, 0, Math.PI * 2); c.fill();
+      c.fillStyle = "rgba(217, 230, 234, 0.55)";
+      c.beginPath(); c.arc(x, base - 59 * scale, 3 * scale, 0, Math.PI * 2); c.fill();
+    });
+
     snowField(c, rand, s.snow, s.cross);
   }
 

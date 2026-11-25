@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-26T00:40:54+05:00",
+  "generatedAt": "2026-11-26T00:52:05+05:00",
   "title": "Design System: Winter Dispatch / Зимняя доставка",
   "extensions": {
     "colorMeta": {
@@ -130,7 +130,7 @@
       "name": "Postcard Artifact",
       "kind": "custom",
       "refersTo": "postcard-artifact",
-      "description": "Signature printed card: survey grid, one of eight rotating thematic winter scenes, red registration brackets, and no printed greeting caption.",
+      "description": "Signature printed card: survey grid, one of eight rotating thematic winter scenes, red registration brackets, and no printed greeting caption; snowstorm, forest and railway now layer wind, mist, snow depths and rail-station detail.",
       "html": "<figure class=\"ds-postcard\"><div class=\"ds-postcard-sheet\"><div class=\"ds-postcard-top\"><span>WINTER DISPATCH / POSTCARD</span><span>NO. 001 · SEASON 26</span></div><div class=\"ds-postcard-stamp\">WINTER<br>POSTAGE PAID 26</div><div class=\"ds-postcard-greeting\">STAY WARM.<br>WRITE SOON.</div><div class=\"ds-postcard-rule\"></div><div class=\"ds-postcard-address\">TO / FROM</div></div></figure>",
       "css": ".ds-postcard{margin:0;max-width:840px;aspect-ratio:8/5;overflow:hidden;border:1px solid var(--line-strong);background:var(--card-bg);box-shadow:10px 14px 34px rgba(0,0,0,.55),0 0 0 1px rgba(255,107,107,.05)}.ds-postcard-sheet{position:relative;width:100%;height:100%;padding:4% 5%;box-sizing:border-box;color:var(--ink-2);font-family:var(--mono);background-image:linear-gradient(rgba(126,180,196,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(126,180,196,.055) 1px,transparent 1px);background-size:2.5% 4%}.ds-postcard-sheet::before,.ds-postcard-sheet::after{content:\"\";position:absolute;width:12px;height:12px;border:1.5px solid var(--signal)}.ds-postcard-sheet::before{top:2%;left:2%;border-right:0;border-bottom:0}.ds-postcard-sheet::after{bottom:2%;right:2%;border-left:0;border-top:0}.ds-postcard-top{display:flex;justify-content:space-between;color:var(--ink-2);font-size:11px;letter-spacing:.18em}.ds-postcard-stamp{position:absolute;top:7%;right:6%;width:16%;padding:10px 6px;box-sizing:border-box;background:#dbe9e6;color:#0b1a1c;border:1px solid #0b1a1c;font-size:9px;font-weight:700;line-height:1.6;text-align:center;letter-spacing:.08em}.ds-postcard-greeting{margin-top:8%;color:var(--signal);font-size:clamp(18px,4.4vw,52px);font-weight:700;line-height:1.39}.ds-postcard-rule{height:1px;margin-top:6%;background:var(--line-strong)}.ds-postcard-address{margin-top:3%;color:var(--ink-2);font-size:clamp(9px,2vw,24px);letter-spacing:.1em}"
     },
@@ -159,7 +159,7 @@
       "One mono family in both English and Russian, with Segoe UI in the stack for Cyrillic; hierarchy comes from size, weight and tracking, and the chosen language survives a reload.",
       "Hairline rules, square corners, a 2px radius only on text fields, and a 6/8/12/18/28px spacing rhythm.",
       "Two-panel workbench with the 360px rail on the right, eight 60×72px stamp previews in a 4×2 grid, and a live 2× canvas preview that is exactly the PNG.",
-      "The printed card has its own paper, grid, stamp block and red registration marks; one of eight themed scenes rotates every seven seconds and the stage bar names it.",
+      "The printed card has its own paper, grid, stamp block and red registration marks; one of eight themed scenes rotates every seven seconds and the stage bar names it. Snowstorm layers wind and snow depths, forest layers mist and pine planes, and railway layers an arriving train and station.",
       "The footer holds one centred 12px greeting split by an authored 12×12 red SVG snowflake; it follows the active scene and language rather than carrying notices."
     ],
     "rules": [
