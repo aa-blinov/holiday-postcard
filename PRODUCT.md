@@ -31,7 +31,7 @@ delegated: static HTML/CSS/JS, no build step — inferred from the brief; the st
 - Eight authored stamp designs (pine, snow, mug, moon, star, candle, bell, mitten) with enlarged chooser previews.
 - Editable greeting message and recipient/sender fields.
 - Russian and English interface and sample greetings via a language switch, including localized text drawn on the card; the chosen language survives a page reload.
-- Four authored winter background compositions that cycle automatically every seven seconds while editing pauses the cycle; the current composition is shown in the stage bar.
+- Eight authored thematic background compositions (observatory, snowstorm, city, forest, aurora, railway, celebration, lanterns) that cycle automatically every seven seconds while editing pauses the cycle; the current composition is shown in the stage bar.
 - Live preview that matches the exported PNG.
 - PNG download from the browser.
 - [Pinned by brief] High-contrast dark, crisp terminal-inspired palette for the whole surface.
@@ -43,7 +43,7 @@ delegated: static HTML/CSS/JS, no build step — inferred from the brief; the st
 
 ## Evidence on Hand
 
-No real customer content, assets, or testimonials were supplied. All sample greetings and stamp artwork are authored demonstration content and must be labelled as such where a visitor could mistake them for real correspondence.
+No real customer content, assets, or testimonials were supplied. All sample greetings and stamp artwork are authored demonstration content. The footer now shows rotating greetings instead of a disclosure line, so do not present the samples as real correspondence in product copy.
 
 ## Product Principles
 

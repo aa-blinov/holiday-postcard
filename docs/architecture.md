@@ -28,7 +28,7 @@ input / language / stamp / scene index
                   +--> aria-label describing the current card
 ```
 
-`refresh()` reads the form, redraws the card, restarts the scene timer and updates the status line. A scene change calls `drawCard()` directly, so it does not reset the timer.
+`refresh()` reads the form, redraws the card, restarts the scene timer and writes a screen-reader-only status message. A scene change calls `drawCard()` directly, so it does not reset the timer.
 
 ## Decisions worth knowing about
 
@@ -36,9 +36,9 @@ input / language / stamp / scene index
 
 The card exists only as pixels on one canvas. Downloading calls `toBlob()` on that canvas, so there is no second renderer that could drift from what the visitor saw. The cost is that every visual change has to be written as canvas drawing code in `app.js`.
 
-### Scenes are data, not branching code
+### Scenes are data plus one drawer each
 
-The `SCENES` table holds each composition's seed, moon geometry, particle count, ridge points, pines and cabins. `drawWinterScene()` reads one entry and draws it. Adding a scene is a table entry; the drawing loop stays untouched.
+The `SCENES` table holds each composition's `kind`, seed and geometry. `SCENE_DRAWERS` maps each kind to its own drawing function: observatory, snowstorm, city, forest, aurora, railway, celebration and lanterns. `drawWinterScene()` dispatches to the active drawer. Adding a theme means one table entry and one drawer; existing drawers stay untouched.
 
 ### Language is stored, content is not
 
@@ -50,7 +50,7 @@ Everything the card needs is drawn with vector paths and a local monospace stack
 
 ## Boundaries
 
-- `app.js` never changes the DOM outside its own controls, the status line and the canvas label.
+- `app.js` never changes the DOM outside its own controls, the screen-reader-only status node and the canvas label.
 - `styles.css` never draws the postcard; it only frames it.
 - Documentation in `docs/` describes the build; it is never read by the page.
 - The house checker is referenced by the CI action, not copied into this repository.

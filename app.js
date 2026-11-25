@@ -18,8 +18,6 @@
       messagePlaceholder: "Write a short winter greeting…", sample: "TRY A SAMPLE GREETING",
       addressTitle: "03 / ADDRESS", optional: "OPTIONAL", to: "TO", from: "FROM",
       recipientPlaceholder: "Recipient", senderPlaceholder: "Your name", download: "DOWNLOAD PNG",
-      footerLeft: "SAMPLE COPY AND STAMP ARTWORK ARE AUTHORED FOR DEMONSTRATION.",
-      footerRight: "WINTER DISPATCH / LOCAL-ONLY · NOTHING IS UPLOADED",
       stampPine: "PINE", stampSnow: "SNOW", stampMug: "MUG", stampMoon: "MOON",
       stampStar: "STAR", stampCandle: "CANDLE", stampBell: "BELL", stampMitten: "MITTEN",
       cardMasthead: "WINTER DISPATCH / POSTCARD", cardIssue: "NO. 001 · SEASON 26",
@@ -44,8 +42,6 @@
       messagePlaceholder: "Напишите короткое зимнее пожелание…", sample: "ПОПРОБОВАТЬ ПОЖЕЛАНИЕ",
       addressTitle: "03 / АДРЕС", optional: "НЕОБЯЗАТЕЛЬНО", to: "КОМУ", from: "ОТ",
       recipientPlaceholder: "Получатель", senderPlaceholder: "Ваше имя", download: "СКАЧАТЬ PNG",
-      footerLeft: "ОБРАЗЦЫ ТЕКСТА И ШТАМПОВ СОЗДАНЫ ДЛЯ ПРИМЕРА.",
-      footerRight: "ЗИМНЯЯ ДОСТАВКА / ТОЛЬКО ЛОКАЛЬНО · НИЧЕГО НЕ ОТПРАВЛЯЕТСЯ",
       stampPine: "СОСНА", stampSnow: "СНЕГ", stampMug: "КРУЖКА", stampMoon: "ЛУНА",
       stampStar: "ЗВЕЗДА", stampCandle: "СВЕЧА", stampBell: "КОЛОКОЛ", stampMitten: "ВАРЕЖКА",
       cardMasthead: "ЗИМНЯЯ ДОСТАВКА / ОТКРЫТКА", cardIssue: "№ 001 · СЕЗОН 26",
@@ -82,7 +78,8 @@
 
   const SCENES = [
     {
-      seed: 2026, moon: [818, 468], radius: 86, arcs: 3, arcFrom: -2.55, arcTo: -0.65,
+      kind: "observatory", seed: 2026,
+      moon: [818, 468], radius: 86, arcs: 3, arcFrom: -2.55, arcTo: -0.65,
       snow: 46, cross: 0.28,
       pines: [[196, 548, 0.9], [372, 566, 0.65], [1052, 552, 0.75]],
       cabins: [[690, 578], [726, 586]],
@@ -90,28 +87,44 @@
       near: [[64, 600], [236, 556], [414, 590], [604, 548], [802, 594], [1002, 552], [1136, 580], [1136, 600]]
     },
     {
-      seed: 731, moon: [520, 420], radius: 64, arcs: 2, arcFrom: -2.9, arcTo: -0.35,
-      snow: 68, cross: 0.22,
-      pines: [[180, 552, 0.8], [452, 570, 0.7], [880, 548, 0.9], [1040, 566, 0.6]],
-      cabins: [[760, 584]],
-      far: [[64, 600], [130, 556], [250, 512], [390, 558], [500, 500], [620, 548], [770, 496], [900, 552], [1030, 510], [1136, 548], [1136, 600]],
-      near: [[64, 600], [200, 574], [360, 596], [540, 552], [720, 590], [900, 546], [1136, 584], [1136, 600]]
+      kind: "snowstorm", seed: 731,
+      moon: [1040, 316], radius: 38, snow: 118, cross: 0.14,
+      trees: [[150, 556, 0.8], [286, 572, 0.6], [846, 562, 0.7], [1040, 578, 0.9]],
+      drifts: [[64, 600], [220, 560], [420, 584], [620, 548], [830, 586], [1020, 552], [1136, 580], [1136, 600]]
     },
     {
-      seed: 1147, moon: [1010, 410], radius: 52, arcs: 4, arcFrom: -2.2, arcTo: -0.2,
-      snow: 34, cross: 0.40,
-      pines: [[300, 560, 0.7], [620, 545, 0.85]],
-      cabins: [[180, 580], [216, 588], [840, 574]],
-      far: [[64, 600], [140, 540], [260, 578], [380, 500], [520, 556], [660, 480], [800, 542], [940, 490], [1060, 552], [1136, 520], [1136, 600]],
-      near: [[64, 600], [180, 562], [340, 592], [500, 540], [680, 588], [860, 548], [1020, 590], [1136, 556], [1136, 600]]
+      kind: "city", seed: 1147,
+      moon: [1020, 300], radius: 52, snow: 34, cross: 0.34,
+      buildings: [[72, 96, 112], [178, 74, 160], [262, 110, 92], [382, 86, 138], [478, 120, 104], [608, 78, 172], [696, 104, 120], [810, 92, 148], [912, 116, 100], [1038, 70, 164]],
+      wires: [214, 236, 258]
     },
     {
-      seed: 89, moon: [700, 500], radius: 96, arcs: 3, arcFrom: -2.7, arcTo: -0.5,
-      snow: 54, cross: 0.30,
-      pines: [[110, 558, 0.7], [940, 552, 0.8]],
-      cabins: [[520, 580], [556, 588]],
-      far: [[64, 600], [190, 530], [320, 574], [470, 510], [610, 566], [760, 500], [890, 558], [1020, 516], [1136, 560], [1136, 600]],
-      near: [[64, 600], [240, 548], [420, 594], [610, 540], [790, 590], [980, 546], [1136, 586], [1136, 600]]
+      kind: "forest", seed: 89,
+      moon: [600, 356], radius: 68, snow: 52, cross: 0.30,
+      farPines: [[110, 540, 0.5], [190, 548, 0.6], [270, 534, 0.55], [360, 550, 0.65], [450, 538, 0.5], [560, 552, 0.6], [670, 536, 0.55], [780, 548, 0.65], [890, 540, 0.5], [1000, 550, 0.6], [1090, 538, 0.55]],
+      nearPines: [[150, 590, 1.25], [390, 600, 1.4], [640, 594, 1.3], [900, 600, 1.45], [1100, 590, 1.2]]
+    },
+    {
+      kind: "aurora", seed: 421,
+      stars: 72, bands: 4, snow: 18, cross: 0.44,
+      mountains: [[64, 600], [180, 520], [300, 566], [420, 484], [560, 556], [680, 500], [820, 558], [960, 486], [1080, 552], [1136, 520], [1136, 600]]
+    },
+    {
+      kind: "railway", seed: 613,
+      moon: [880, 330], radius: 44, snow: 42, cross: 0.24,
+      vanishing: [600, 470], poles: [[1040, 566, 1.1], [900, 524, 0.8], [800, 500, 0.58], [730, 484, 0.4]]
+    },
+    {
+      kind: "celebration", seed: 777,
+      garlandY: 132, bulbs: 15, snow: 26, cross: 0.32,
+      bursts: [[876, 432, 50], [318, 408, 36]],
+      rooftops: [[64, 600], [180, 552], [180, 536], [300, 536], [300, 566], [430, 566], [430, 540], [560, 540], [560, 574], [700, 574], [700, 548], [840, 548], [840, 570], [980, 570], [980, 544], [1136, 544], [1136, 600]]
+    },
+    {
+      kind: "lanterns", seed: 909,
+      wireY: 300, snow: 30, cross: 0.38,
+      lanterns: [[190, 365], [396, 391], [626, 400], [858, 386], [1064, 356]],
+      rooftops: [[64, 600], [220, 550], [220, 532], [340, 532], [340, 564], [520, 564], [520, 540], [660, 540], [660, 576], [820, 576], [820, 548], [960, 548], [960, 568], [1136, 568], [1136, 600]]
     }
   ];
 
@@ -148,7 +161,7 @@
   const countEl = document.getElementById("messageCount");
   const statusEl = document.getElementById("status");
   const sceneTagEl = document.getElementById("sceneTag");
-  const topStatusText = document.getElementById("topStatusText");
+  const footerGreetingEl = document.getElementById("footerGreeting");
   const frame = document.getElementById("cardFrame");
   const sweep = document.getElementById("sweep");
   const radios = [...document.querySelectorAll('input[name="stamp"]')];
@@ -454,51 +467,55 @@
     trackedRight(c, "26", x + w - 26, y + h - 30, 1.3);
   }
 
-  function drawWinterScene(c) {
-    const s = SCENES[sceneIndex % SCENES.length];
-    const [mx, my] = s.moon;
-    c.save();
+  function seeded(seed) {
+    let value = seed;
+    return () => {
+      value = (value * 1664525 + 1013904223) >>> 0;
+      return value / 4294967296;
+    };
+  }
 
-    let seed = s.seed;
-    const rand = () => {
-      seed = (seed * 1664525 + 1013904223) >>> 0;
-      return seed / 4294967296;
+  function snowflakeSeparator() {
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 12 12");
+    svg.setAttribute("class", "greeting-sep");
+    svg.setAttribute("aria-hidden", "true");
+
+    const addLine = (x1, y1, x2, y2) => {
+      const line = document.createElementNS(ns, "line");
+      line.setAttribute("x1", String(x1));
+      line.setAttribute("y1", String(y1));
+      line.setAttribute("x2", String(x2));
+      line.setAttribute("y2", String(y2));
+      svg.appendChild(line);
     };
 
-    c.strokeStyle = "rgba(255, 107, 107, 0.09)";
-    c.lineWidth = 16;
-    for (let i = 0; i < s.arcs; i++) {
-      c.beginPath();
-      c.arc(mx, my, s.radius + 46 + i * 26, s.arcFrom, s.arcTo);
-      c.stroke();
+    for (let i = 0; i < 3; i++) {
+      const a = (Math.PI / 3) * i;
+      const dx = Math.cos(a) * 4.6;
+      const dy = Math.sin(a) * 4.6;
+      addLine(6 - dx, 6 - dy, 6 + dx, 6 + dy);
     }
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 3) * i;
+      const bx = 6 + Math.cos(a) * 3.1;
+      const by = 6 + Math.sin(a) * 3.1;
+      for (const side of [-1, 1]) {
+        const ba = a + side * 0.9;
+        addLine(bx, by, bx + Math.cos(ba) * 1.9, by + Math.sin(ba) * 1.9);
+      }
+    }
+    return svg;
+  }
 
-    c.strokeStyle = "rgba(255, 107, 107, 0.34)";
-    c.lineWidth = 2;
-    c.beginPath(); c.arc(mx, my, s.radius, 0, Math.PI * 2); c.stroke();
-    c.strokeStyle = "rgba(217, 230, 234, 0.18)";
-    c.lineWidth = 1;
-    c.beginPath(); c.arc(mx, my, s.radius - 16, 0, Math.PI * 2); c.stroke();
-    c.beginPath(); c.arc(mx, my, s.radius - 32, 0, Math.PI * 2); c.stroke();
-    c.fillStyle = "rgba(217, 230, 234, 0.15)";
-    for (const [dx, dy, r] of [[-30, -26, 7], [24, 18, 5], [-12, 32, 4], [34, -28, 3]]) {
-      c.beginPath(); c.arc(mx + dx, my + dy, r, 0, Math.PI * 2); c.fill();
-    }
-    c.strokeStyle = "rgba(255, 107, 107, 0.34)";
-    for (let i = 0; i < 12; i++) {
-      const a = (Math.PI * 2 / 12) * i;
-      c.beginPath();
-      c.moveTo(mx + Math.cos(a) * (s.radius + 10), my + Math.sin(a) * (s.radius + 10));
-      c.lineTo(mx + Math.cos(a) * (s.radius + 20), my + Math.sin(a) * (s.radius + 20));
-      c.stroke();
-    }
-
-    for (let i = 0; i < s.snow; i++) {
+  function snowField(c, rand, count, cross, yMin = 150, yMax = 580) {
+    for (let i = 0; i < count; i++) {
       const x = 60 + rand() * 1080;
-      const y = 150 + rand() * 430;
+      const y = yMin + rand() * (yMax - yMin);
       const size = 1 + Math.floor(rand() * 3);
       const alpha = 0.18 + rand() * 0.40;
-      if (rand() > 1 - s.cross) {
+      if (rand() > 1 - cross) {
         c.strokeStyle = `rgba(217, 230, 234, ${alpha})`;
         c.lineWidth = 1;
         c.beginPath();
@@ -510,59 +527,346 @@
         c.fillRect(x, y, size, size);
       }
     }
+  }
 
+  function filledShape(c, points, fill, stroke) {
     c.beginPath();
-    s.far.forEach(([x, y], i) => (i === 0 ? c.moveTo(x, y) : c.lineTo(x, y)));
+    points.forEach(([x, y], i) => (i === 0 ? c.moveTo(x, y) : c.lineTo(x, y)));
     c.closePath();
-    c.fillStyle = "rgba(194, 31, 46, 0.10)";
+    c.fillStyle = fill;
     c.fill();
-    c.strokeStyle = "rgba(217, 230, 234, 0.34)";
-    c.stroke();
-
-    for (const [px, py, scale] of s.pines) {
-      c.fillStyle = "rgba(10, 17, 24, 0.92)";
-      for (let i = 0; i < 3; i++) {
-        const apex = py - 46 * scale + i * 16 * scale;
-        const base = py - 8 * scale + i * 14 * scale;
-        const half = 18 * scale - i * 3 * scale;
-        c.beginPath();
-        c.moveTo(px, apex);
-        c.lineTo(px + half, base);
-        c.lineTo(px - half, base);
-        c.closePath();
-        c.fill();
-      }
-      c.fillRect(px - 2 * scale, py - 4 * scale, 4 * scale, 10 * scale);
-      c.strokeStyle = "rgba(255, 107, 107, 0.42)";
+    if (stroke) {
+      c.strokeStyle = stroke;
       c.lineWidth = 1;
-      c.beginPath();
-      c.moveTo(px - 9 * scale, py - 30 * scale);
-      c.lineTo(px, py - 39 * scale);
-      c.lineTo(px + 9 * scale, py - 30 * scale);
       c.stroke();
     }
+  }
 
-    c.beginPath();
-    s.near.forEach(([x, y], i) => (i === 0 ? c.moveTo(x, y) : c.lineTo(x, y)));
-    c.closePath();
-    c.fillStyle = "rgba(10, 17, 24, 0.78)";
-    c.fill();
-    c.strokeStyle = "rgba(217, 230, 234, 0.20)";
-    c.stroke();
-
-    for (const [bx, by] of s.cabins) {
-      c.fillStyle = "rgba(10, 17, 24, 0.95)";
-      c.fillRect(bx, by, 22, 16);
+  function pine(c, x, base, scale, fill = "rgba(10, 17, 24, 0.92)") {
+    c.fillStyle = fill;
+    for (let i = 0; i < 3; i++) {
+      const apex = base - 46 * scale + i * 16 * scale;
+      const foot = base - 8 * scale + i * 14 * scale;
+      const half = 18 * scale - i * 3 * scale;
       c.beginPath();
-      c.moveTo(bx - 4, by);
-      c.lineTo(bx + 11, by - 10);
-      c.lineTo(bx + 26, by);
+      c.moveTo(x, apex);
+      c.lineTo(x + half, foot);
+      c.lineTo(x - half, foot);
       c.closePath();
       c.fill();
-      c.fillStyle = C.signal;
-      c.fillRect(bx + 8, by + 5, 4, 4);
     }
+    c.fillRect(x - 2 * scale, base - 4 * scale, 4 * scale, 10 * scale);
+    c.strokeStyle = "rgba(255, 107, 107, 0.42)";
+    c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(x - 9 * scale, base - 30 * scale);
+    c.lineTo(x, base - 39 * scale);
+    c.lineTo(x + 9 * scale, base - 30 * scale);
+    c.stroke();
+  }
 
+  function bareTree(c, x, base, scale) {
+    c.strokeStyle = "rgba(217, 230, 234, 0.34)";
+    c.lineWidth = 2 * scale;
+    c.beginPath();
+    c.moveTo(x, base);
+    c.lineTo(x, base - 76 * scale);
+    c.stroke();
+    c.lineWidth = 1.2 * scale;
+    for (let i = 0; i < 4; i++) {
+      const y = base - 24 * scale - i * 15 * scale;
+      const reach = (26 - i * 4) * scale;
+      c.beginPath();
+      c.moveTo(x, y);
+      c.lineTo(x - reach, y - 14 * scale);
+      c.moveTo(x, y);
+      c.lineTo(x + reach, y - 16 * scale);
+      c.stroke();
+    }
+  }
+
+  function moonDisc(c, x, y, r, ticks = true) {
+    c.strokeStyle = "rgba(255, 107, 107, 0.34)";
+    c.lineWidth = 2;
+    c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.stroke();
+    c.strokeStyle = "rgba(217, 230, 234, 0.18)";
+    c.lineWidth = 1;
+    c.beginPath(); c.arc(x, y, r - 14, 0, Math.PI * 2); c.stroke();
+    if (r > 30) {
+      c.beginPath(); c.arc(x, y, r - 28, 0, Math.PI * 2); c.stroke();
+    }
+    c.fillStyle = "rgba(217, 230, 234, 0.15)";
+    for (const [dx, dy, cr] of [[-r * 0.35, -r * 0.3, r / 12], [r * 0.28, r * 0.2, r / 16], [-r * 0.14, r * 0.38, r / 20]]) {
+      c.beginPath(); c.arc(x + dx, y + dy, cr, 0, Math.PI * 2); c.fill();
+    }
+    if (!ticks) return;
+    c.strokeStyle = "rgba(255, 107, 107, 0.34)";
+    for (let i = 0; i < 12; i++) {
+      const a = (Math.PI * 2 / 12) * i;
+      c.beginPath();
+      c.moveTo(x + Math.cos(a) * (r + 10), y + Math.sin(a) * (r + 10));
+      c.lineTo(x + Math.cos(a) * (r + 20), y + Math.sin(a) * (r + 20));
+      c.stroke();
+    }
+  }
+
+  function cabin(c, x, y) {
+    c.fillStyle = "rgba(10, 17, 24, 0.95)";
+    c.fillRect(x, y, 22, 16);
+    c.beginPath();
+    c.moveTo(x - 4, y);
+    c.lineTo(x + 11, y - 10);
+    c.lineTo(x + 26, y);
+    c.closePath();
+    c.fill();
+    c.fillStyle = C.signal;
+    c.fillRect(x + 8, y + 5, 4, 4);
+  }
+
+  function drawObservatory(c, s) {
+    const rand = seeded(s.seed);
+    const [mx, my] = s.moon;
+    c.strokeStyle = "rgba(255, 107, 107, 0.09)";
+    c.lineWidth = 16;
+    for (let i = 0; i < s.arcs; i++) {
+      c.beginPath();
+      c.arc(mx, my, s.radius + 46 + i * 26, s.arcFrom, s.arcTo);
+      c.stroke();
+    }
+    moonDisc(c, mx, my, s.radius);
+    snowField(c, rand, s.snow, s.cross);
+    filledShape(c, s.far, "rgba(194, 31, 46, 0.10)", "rgba(217, 230, 234, 0.34)");
+    s.pines.forEach(([x, y, scale]) => pine(c, x, y, scale));
+    filledShape(c, s.near, "rgba(10, 17, 24, 0.78)", "rgba(217, 230, 234, 0.20)");
+    s.cabins.forEach(([x, y]) => cabin(c, x, y));
+  }
+
+  function drawSnowstorm(c, s) {
+    const rand = seeded(s.seed);
+    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    c.strokeStyle = "rgba(217, 230, 234, 0.26)";
+    c.lineWidth = 1;
+    for (let i = 0; i < s.snow; i++) {
+      const x = 60 + rand() * 1080;
+      const y = 150 + rand() * 430;
+      const length = 10 + rand() * 18;
+      c.beginPath();
+      c.moveTo(x, y);
+      c.lineTo(x + length, y + length * 0.8);
+      c.stroke();
+    }
+    filledShape(c, s.drifts, "rgba(194, 31, 46, 0.13)", "rgba(217, 230, 234, 0.26)");
+    s.trees.forEach(([x, y, scale]) => bareTree(c, x, y, scale));
+  }
+
+  function drawCity(c, s) {
+    const rand = seeded(s.seed);
+    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    for (const [x, w, h] of s.buildings) {
+      const top = 600 - h;
+      c.fillStyle = "rgba(10, 17, 24, 0.88)";
+      c.fillRect(x, top, w, h);
+      c.strokeStyle = "rgba(217, 230, 234, 0.22)";
+      c.lineWidth = 1;
+      c.strokeRect(x + 0.5, top + 0.5, w - 1, h - 1);
+      for (let wy = top + 12; wy < 594; wy += 22) {
+        for (let wx = x + 10; wx < x + w - 8; wx += 18) {
+          c.fillStyle = rand() > 0.62 ? C.signal : "rgba(217, 230, 234, 0.14)";
+          c.fillRect(wx, wy, 5, 7);
+        }
+      }
+    }
+    c.strokeStyle = "rgba(217, 230, 234, 0.24)";
+    for (const y of s.wires) {
+      c.beginPath();
+      c.moveTo(64, y);
+      c.quadraticCurveTo(600, y + 34, 1136, y);
+      c.stroke();
+    }
+    snowField(c, rand, s.snow, s.cross);
+  }
+
+  function drawForest(c, s) {
+    const rand = seeded(s.seed);
+    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    snowField(c, rand, s.snow, s.cross);
+    s.farPines.forEach(([x, y, scale]) => pine(c, x, y, scale, "rgba(217, 230, 234, 0.10)"));
+    filledShape(c, [[64, 600], [280, 582], [560, 594], [860, 580], [1136, 592], [1136, 600]], "rgba(194, 31, 46, 0.10)");
+    s.nearPines.forEach(([x, y, scale]) => pine(c, x, y, scale));
+  }
+
+  function drawAurora(c, s) {
+    const rand = seeded(s.seed);
+    for (let i = 0; i < s.stars; i++) {
+      const x = 64 + rand() * 1072;
+      const y = 150 + rand() * 330;
+      const alpha = 0.16 + rand() * 0.48;
+      if (rand() > 0.78) {
+        c.strokeStyle = `rgba(217, 230, 234, ${alpha})`;
+        c.lineWidth = 1;
+        c.beginPath();
+        c.moveTo(x - 3, y); c.lineTo(x + 3, y);
+        c.moveTo(x, y - 3); c.lineTo(x, y + 3);
+        c.stroke();
+      } else {
+        c.fillStyle = `rgba(232, 243, 245, ${alpha})`;
+        c.fillRect(x, y, 2, 2);
+      }
+    }
+    for (let i = 0; i < s.bands; i++) {
+      const top = 360 + i * 22;
+      c.beginPath();
+      c.moveTo(64, top + 40);
+      c.bezierCurveTo(320, top - 46, 560, top + 58, 820, top - 28);
+      c.bezierCurveTo(960, top - 66, 1070, top + 20, 1136, top - 10);
+      c.lineTo(1136, top + 56);
+      c.bezierCurveTo(1020, top + 96, 860, top + 12, 700, top + 78);
+      c.bezierCurveTo(460, top + 112, 240, top + 24, 64, top + 92);
+      c.closePath();
+      c.fillStyle = `rgba(255, 107, 107, ${0.04 + i * 0.012})`;
+      c.fill();
+    }
+    filledShape(c, s.mountains, "rgba(194, 31, 46, 0.12)", "rgba(217, 230, 234, 0.32)");
+    snowField(c, rand, s.snow, s.cross);
+  }
+
+  function drawRailway(c, s) {
+    const rand = seeded(s.seed);
+    const [vx, vy] = s.vanishing;
+    moonDisc(c, s.moon[0], s.moon[1], s.radius, false);
+    c.strokeStyle = "rgba(217, 230, 234, 0.34)";
+    c.lineWidth = 1;
+    for (const railX of [300, 900]) {
+      c.beginPath();
+      c.moveTo(railX, 600);
+      c.lineTo(vx, vy);
+      c.stroke();
+    }
+    for (let i = 0; i < 15; i++) {
+      const t = (i / 14) ** 1.7;
+      const y = 600 - t * (600 - vy);
+      const half = (300 - t * (300 - vx)) * 0.5 + 22;
+      c.beginPath();
+      c.moveTo(vx - half, y);
+      c.lineTo(vx + half, y);
+      c.stroke();
+    }
+    c.fillStyle = "rgba(10, 17, 24, 0.92)";
+    c.fillRect(vx - 30, vy - 22, 60, 22);
+    c.beginPath();
+    c.moveTo(vx - 38, vy - 22);
+    c.lineTo(vx, vy - 36);
+    c.lineTo(vx + 38, vy - 22);
+    c.closePath();
+    c.fill();
+    c.fillStyle = C.signal;
+    c.fillRect(vx - 3, vy - 16, 6, 6);
+    s.poles.forEach(([x, base, scale]) => {
+      c.strokeStyle = "rgba(217, 230, 234, 0.30)";
+      c.lineWidth = 2 * scale;
+      c.beginPath();
+      c.moveTo(x, base);
+      c.lineTo(x, base - 90 * scale);
+      c.moveTo(x - 18 * scale, base - 72 * scale);
+      c.lineTo(x + 18 * scale, base - 72 * scale);
+      c.stroke();
+    });
+    snowField(c, rand, s.snow, s.cross);
+  }
+
+  function drawCelebration(c, s) {
+    const rand = seeded(s.seed);
+    const sag = 30;
+    c.strokeStyle = "rgba(217, 230, 234, 0.28)";
+    c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(64, s.garlandY);
+    c.quadraticCurveTo(600, s.garlandY + sag * 2, 1136, s.garlandY);
+    c.stroke();
+    for (let i = 0; i < s.bulbs; i++) {
+      const t = i / (s.bulbs - 1);
+      const x = 64 + t * 1072;
+      const y = s.garlandY + 4 * sag * t * (1 - t);
+      c.fillStyle = i % 3 === 0 ? C.signal : "rgba(217, 230, 234, 0.86)";
+      c.beginPath();
+      c.arc(x, y + 6, 4, 0, Math.PI * 2);
+      c.fill();
+      c.strokeStyle = "rgba(255, 107, 107, 0.20)";
+      c.beginPath();
+      c.arc(x, y + 6, 9, 0, Math.PI * 2);
+      c.stroke();
+    }
+    s.bursts.forEach(([x, y, r]) => {
+      c.strokeStyle = "rgba(255, 107, 107, 0.62)";
+      c.lineWidth = 1.5;
+      for (let i = 0; i < 18; i++) {
+        const a = (Math.PI * 2 / 18) * i;
+        c.beginPath();
+        c.moveTo(x + Math.cos(a) * r * 0.32, y + Math.sin(a) * r * 0.32);
+        c.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+        c.stroke();
+        c.fillStyle = i % 2 ? C.signal : "rgba(217, 230, 234, 0.72)";
+        c.fillRect(x + Math.cos(a) * r - 1.5, y + Math.sin(a) * r - 1.5, 3, 3);
+      }
+    });
+    filledShape(c, s.rooftops, "rgba(10, 17, 24, 0.88)", "rgba(217, 230, 234, 0.26)");
+    for (let i = 0; i < 10; i++) {
+      c.fillStyle = i % 2 ? C.signal : "rgba(217, 230, 234, 0.20)";
+      c.fillRect(120 + i * 100, 562, 6, 8);
+    }
+    snowField(c, rand, s.snow, s.cross);
+  }
+
+  function drawLanterns(c, s) {
+    const rand = seeded(s.seed);
+    const sag = 60;
+    c.strokeStyle = "rgba(217, 230, 234, 0.28)";
+    c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(64, s.wireY);
+    c.quadraticCurveTo(600, s.wireY + sag * 2, 1136, s.wireY);
+    c.stroke();
+    c.fillStyle = "rgba(10, 17, 24, 0.90)";
+    c.fillRect(100, s.wireY + 4, 6, 8);
+    s.lanterns.forEach(([x, y]) => {
+      const t = (x - 64) / 1072;
+      const wireY = s.wireY + 4 * sag * t * (1 - t);
+      c.strokeStyle = "rgba(217, 230, 234, 0.30)";
+      c.beginPath();
+      c.moveTo(x, wireY);
+      c.lineTo(x, y - 14);
+      c.stroke();
+      c.strokeStyle = "rgba(255, 107, 107, 0.22)";
+      c.beginPath();
+      c.arc(x, y, 24, 0, Math.PI * 2);
+      c.stroke();
+      c.fillStyle = C.signalDeep;
+      c.fillRect(x - 9, y - 13, 18, 26);
+      c.fillStyle = C.signal;
+      c.fillRect(x - 5, y - 9, 10, 18);
+      c.fillStyle = "rgba(10, 17, 24, 0.9)";
+      c.fillRect(x - 11, y - 16, 22, 4);
+      c.fillRect(x - 11, y + 12, 22, 4);
+    });
+    filledShape(c, s.rooftops, "rgba(10, 17, 24, 0.88)", "rgba(217, 230, 234, 0.24)");
+    snowField(c, rand, s.snow, s.cross);
+  }
+
+  const SCENE_DRAWERS = {
+    observatory: drawObservatory,
+    snowstorm: drawSnowstorm,
+    city: drawCity,
+    forest: drawForest,
+    aurora: drawAurora,
+    railway: drawRailway,
+    celebration: drawCelebration,
+    lanterns: drawLanterns
+  };
+
+  function drawWinterScene(c) {
+    const s = SCENES[sceneIndex % SCENES.length];
+    c.save();
+    (SCENE_DRAWERS[s.kind] || drawObservatory)(c, s);
     c.restore();
   }
 
@@ -640,6 +944,14 @@
     drawStamp(ctx, 930, 76, stamp);
 
     sceneTagEl.textContent = `${t("scene")} ${String(sceneIndex + 1).padStart(2, "0")}/0${SCENES.length}`;
+    footerGreetingEl.replaceChildren();
+    SAMPLES[lang][sceneIndex % SAMPLES[lang].length]
+      .split("\n")
+      .map((part) => part.trim())
+      .forEach((part, i) => {
+        if (i) footerGreetingEl.appendChild(snowflakeSeparator());
+        footerGreetingEl.appendChild(document.createTextNode(part));
+      });
     const aria = t("ariaCard")
       .replace("{stamp}", t("stamp" + stamp.charAt(0).toUpperCase() + stamp.slice(1)))
       .replace("{message}", raw || t("emptyGreeting"))
@@ -648,10 +960,9 @@
     canvas.setAttribute("aria-label", aria);
   }
 
-  function setStatus(text, warning = false, top = t("topSynced")) {
+  function setStatus(text, warning = false) {
     statusEl.textContent = text;
     statusEl.classList.toggle("is-warning", warning);
-    topStatusText.textContent = top;
   }
 
   function updateCounter() {

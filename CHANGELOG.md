@@ -8,6 +8,30 @@ All notable changes to holiday-postcard. Versions are ordered newest first.
 
 - Nothing yet.
 
+## 0.5.2 — 2026-11-26
+
+### Changed
+
+- The footer greeting now uses an authored SVG snowflake as its separator; the leading red square is gone.
+
+## 0.5.1 — 2026-11-26
+
+### Changed
+
+- The footer now shows a rotating localized greeting instead of the sample-content and local-only notice.
+
+## 0.5.0 — 2026-11-26
+
+### Added
+
+- Eight distinct thematic backgrounds: observatory, snowstorm, city, forest, aurora, railway, celebration and lanterns.
+
+### Changed
+
+- Removed the visible top status pill and bottom status line; status messages now live in a screen-reader-only node.
+- Vertically centred the brand mark with its wordmark and subtitle.
+- Moved celebration garland and hanging lanterns clear of the greeting text.
+
 ## 0.4.0 — 2026-11-26
 
 ### Added

@@ -29,8 +29,10 @@ There is no install, build or bundler step. The house-style checker is not vendo
 
 - **The canvas is the export.** Never re-create the card in a separate renderer for download. `canvas.toBlob()` is the only export path; any change to the card must happen in `drawCard()`.
 - **Language lives in two places.** UI strings come from `STRINGS`; card text comes from the same table through `t()`. A new label needs both `en` and `ru` entries or it will render the key itself.
-- **Scenes are deterministic.** Each scene has its own seed, so the same composition redraws identically. Changing particle counts or ridge points means editing the `SCENES` table, not the drawing loop.
+- **Scenes are data plus one drawer each.** The `SCENES` table holds `kind`, seed and geometry; `SCENE_DRAWERS` maps each kind to its own drawing function. Add a theme with a table entry and a drawer, not by branching inside an existing one.
+- **Scenes are deterministic.** Each scene has its own seed, so the same composition redraws identically. Changing particle counts or ridge points means editing the `SCENES` entry, not the drawing loop.
 - **Editing restarts the scene timer.** `refresh()` calls `scheduleScene()`. A scene change calls `drawCard()` directly so it does not reset its own timer.
+- **Status is invisible.** The `#status` element is `sr-only`. Keep messages there for screen readers; do not restore a visible status pill or line without the owner asking.
 - **Reduced motion still rotates scenes.** It only skips the fade. Do not disable rotation entirely under `prefers-reduced-motion`.
 - **Fonts are local system stacks.** No web font or network request. A font change must keep Cyrillic glyphs; `Segoe UI` is in the stack for that reason.
 - **`.impeccable/questions/` is ignored on purpose.** Its runtime JSON is local state, but the house checker still reads tracked text for newlines. Keep a trailing newline if those files exist.

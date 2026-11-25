@@ -64,17 +64,17 @@ body {
   background: rgba(8, 13, 18, 0.92);
 }
 
-.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .brand-mark {
-  width: 20px; height: 20px; flex: none;
+  width: 22px; height: 22px; flex: none; align-self: center;
   border: 1px solid var(--signal);
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 3px;
 }
 .brand-mark span { background: var(--signal); }
 .brand-mark span:nth-child(2) { opacity: 0.55; }
 .brand-mark span:nth-child(3) { opacity: 0.8; }
-.brand-name { font-weight: 700; letter-spacing: 0.16em; font-size: 13px; white-space: nowrap; }
-.brand-sub { color: var(--ink-3); letter-spacing: 0.12em; font-size: 11px; white-space: nowrap; }
+.brand-name { font-weight: 700; letter-spacing: 0.16em; font-size: 13px; line-height: 1; white-space: nowrap; }
+.brand-sub { color: var(--ink-3); letter-spacing: 0.12em; font-size: 11px; line-height: 1; white-space: nowrap; }
 
 .topbar-meta { display: flex; align-items: center; gap: 18px; }
 .season { color: var(--ink-2); letter-spacing: 0.12em; font-size: 11px; }
@@ -89,12 +89,7 @@ body {
 .lang-switch button + button { border-left: 1px solid var(--line-strong); }
 .lang-switch button:hover { color: var(--signal-hover); }
 .lang-switch button.is-active { background: var(--signal); color: var(--signal-ink); font-weight: 700; }
-.status-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid var(--line-strong); padding: 5px 10px;
-  color: var(--signal); font-size: 11px; letter-spacing: 0.1em;
-}
-.status-dot, .live-dot {
+.live-dot {
   width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--signal);
   box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.14);
 }
@@ -253,18 +248,19 @@ input:focus, textarea:focus { border-color: var(--signal); outline: none; box-sh
 .download-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: square; }
 .download-button:hover { background: var(--signal-hover); }
 .download-button:active { transform: translateY(1px); }
-.status-line {
-  margin: 12px 0 0; color: var(--ink-2); font-size: 12px; letter-spacing: 0.1em;
-  min-height: 16px;
-}
-.status-line.is-warning { color: var(--amber); }
 
 .footer {
   max-width: 1460px; margin: 0 auto;
   padding: 16px 28px 24px;
   border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; gap: 20px;
+  display: flex; justify-content: center;
   color: var(--ink-3); font-size: 12px; letter-spacing: 0.1em;
+}
+.footer-greeting { margin: 0; text-align: center; }
+.greeting-sep {
+  width: 12px; height: 12px; margin: 0 10px;
+  vertical-align: -2px; color: var(--signal);
+  fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round;
 }
 
 @media (max-width: 980px) {

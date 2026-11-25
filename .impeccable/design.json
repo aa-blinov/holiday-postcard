@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T18:15:41Z",
+  "generatedAt": "2026-11-26T00:40:54+05:00",
   "title": "Design System: Winter Dispatch / Зимняя доставка",
   "extensions": {
     "colorMeta": {
@@ -17,7 +17,6 @@
       "ink-secondary": { "role": "neutral", "displayName": "Ice Ink", "canonical": "oklch(91.6% 0.015 218)", "tonalRamp": ["#090c0c", "#202628", "#3b4446", "#586367", "#798588", "#9da7aa", "#c3cbcd", "#ebeff0"] },
       "ink-muted": { "role": "neutral", "displayName": "Muted Ink", "canonical": "oklch(79.0% 0.028 221)", "tonalRamp": ["#080c0e", "#1c272b", "#34454b", "#51656c", "#71868e", "#96a9af", "#beccd1", "#e9f0f2"] },
       "ink-disabled": { "role": "neutral", "displayName": "Disabled Ink", "canonical": "oklch(75.0% 0.030 228)", "tonalRamp": ["#070c0e", "#1c272c", "#34454d", "#50656f", "#718690", "#95a9b2", "#beccd3", "#e9f0f3"] },
-      "amber": { "role": "secondary", "displayName": "Signal Amber", "canonical": "oklch(85.6% 0.126 76)", "tonalRamp": ["#140800", "#391e00", "#613700", "#885500", "#ac760f", "#cb9b53", "#e6c391", "#feecd3"] },
       "signal-wash-05": { "role": "primary", "displayName": "Signal Red 5%", "canonical": "oklch(71.2% 0.181 23) / 0.05", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
       "signal-wash-08": { "role": "primary", "displayName": "Signal Red 8%", "canonical": "oklch(71.2% 0.181 23) / 0.08", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
       "signal-wash-14": { "role": "primary", "displayName": "Signal Red 14%", "canonical": "oklch(71.2% 0.181 23) / 0.14", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
@@ -40,21 +39,21 @@
       "title": { "displayName": "Panel Title", "purpose": "Numbered control-panel headings in both languages." },
       "body": { "displayName": "Body", "purpose": "Studio copy, buttons, inputs and textarea." },
       "label": { "displayName": "Operator Label", "purpose": "Field names, language switch, header meta and the stage-bar scene tag." },
-      "meta": { "displayName": "Operator Meta", "purpose": "Hints, counters, stamp names, status line and footer notes at the 12px functional-text floor." },
+      "meta": { "displayName": "Operator Meta", "purpose": "Hints, counters, stamp names and the centred rotating footer greeting at the 12px functional-text floor." },
       "card-address": { "displayName": "Card Address", "purpose": "Recipient and sender values printed in ice ink on the card." }
     },
     "shadows": [
       { "name": "card-frame", "value": "10px 14px 34px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 107, 107, 0.05)", "purpose": "Deepest lift, under the previewed postcard; the ring is the 5% signal-red wash." },
       { "name": "controls-rail", "value": "8px 10px 28px rgba(0, 0, 0, 0.38)", "purpose": "Softer lift under the whole composer stack." },
       { "name": "primary-button", "value": "0 3px 12px rgba(0, 0, 0, 0.4)", "purpose": "Shallow lift on the single action." },
-      { "name": "live-dot", "value": "0 0 0 2px rgba(255, 107, 107, 0.14)", "purpose": "14% signal-red state ring on live dots, not elevation." },
+      { "name": "live-dot", "value": "0 0 0 2px rgba(255, 107, 107, 0.14)", "purpose": "14% signal-red state ring on the LIVE dot, not elevation." },
       { "name": "selected-stamp", "value": "inset 0 0 0 1px rgba(255, 107, 107, 0.25)", "purpose": "25% signal-red inset ring on the checked stamp tile." }
     ],
     "motion": [
       { "name": "state-transition", "value": "120ms ease", "purpose": "Border, background and colour changes on stamp tiles, ghost button and download button." },
       { "name": "registration-sweep", "value": "520ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Signal-red sweep across the card frame on stamp change, sample load and language switch." },
       { "name": "reduced-motion", "value": "animation-duration: 0.01ms !important; transition-duration: 0.01ms !important", "purpose": "Global override when prefers-reduced-motion is set; also suppresses the sweep entirely." },
-      { "name": "scene-cycle", "value": "7000ms", "purpose": "Four authored winter scenes rotate automatically; any field edit clears and restarts the timer." },
+      { "name": "scene-cycle", "value": "7000ms", "purpose": "Eight authored thematic winter scenes rotate automatically; any field edit clears and restarts the timer." },
       { "name": "scene-refresh-fade", "value": "460ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Short opacity and blur fade on scene change; skipped under reduced motion while the scene still changes." }
     ],
     "breakpoints": [
@@ -104,12 +103,20 @@
       "css": ".ds-field{display:block;margin-bottom:12px}.ds-field-label{display:block;margin-bottom:6px;color:var(--ink-3);font:400 11px/1.5 var(--mono);letter-spacing:.14em}.ds-textarea{width:100%;box-sizing:border-box;min-height:96px;line-height:1.55;resize:vertical;background:var(--raised);border:1px solid var(--line-strong);border-radius:var(--radius,2px);color:var(--signal);font:400 13px/1.55 var(--mono);padding:10px 11px;caret-color:var(--signal)}.ds-textarea::placeholder{color:var(--ink-disabled);opacity:1}.ds-textarea:hover{border-color:var(--ink-3)}.ds-textarea:focus{border-color:var(--signal);outline:none;box-shadow:0 0 0 1px var(--signal)}"
     },
     {
-      "name": "Status Pill",
+      "name": "Scene Tag",
       "kind": "custom",
-      "refersTo": "status-pill",
-      "description": "Square header pill whose signal-red dot reports ready, synced, check or sent state in EN or RU.",
-      "html": "<span class=\"ds-status\"><span class=\"ds-status-dot\" aria-hidden=\"true\"></span><span>SYNCED</span></span>",
-      "css": ".ds-status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);padding:5px 10px;color:var(--signal);font:400 11px/1.5 var(--mono);letter-spacing:.1em}.ds-status-dot{width:6px;height:6px;flex:none;border-radius:50%;background:var(--signal);box-shadow:0 0 0 2px rgba(255,107,107,.14)}.ds-status.is-warning{color:var(--amber)}"
+      "refersTo": "scene-tag",
+      "description": "Hairline-bordered 11px stage-bar label that names the active one of eight winter scenes in EN or RU.",
+      "html": "<span class=\"ds-scene-tag\">SCENE 01/08</span>",
+      "css": ".ds-scene-tag{display:inline-flex;align-items:center;border:1px solid var(--line);padding:5px 9px;border-radius:0;color:var(--ink-3);font:400 11px/1.5 var(--mono);letter-spacing:.14em}"
+    },
+    {
+      "name": "Footer Greeting",
+      "kind": "custom",
+      "refersTo": "footer-greeting",
+      "description": "Centred 12px sample greeting whose two halves are split by an authored red SVG snowflake, with no leading marker.",
+      "html": "<footer class=\"ds-footer\"><p class=\"ds-footer-greeting\" aria-hidden=\"true\">STAY WARM.<svg class=\"ds-greeting-sep\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><line x1=\"1.4\" y1=\"6\" x2=\"10.6\" y2=\"6\"/><line x1=\"3.7\" y1=\"2\" x2=\"8.3\" y2=\"10\"/><line x1=\"8.3\" y1=\"2\" x2=\"3.7\" y2=\"10\"/><line x1=\"9.1\" y1=\"6\" x2=\"10.3\" y2=\"7.5\"/><line x1=\"9.1\" y1=\"6\" x2=\"10.3\" y2=\"4.5\"/><line x1=\"7.6\" y1=\"8.7\" x2=\"6.8\" y2=\"10.5\"/><line x1=\"7.6\" y1=\"8.7\" x2=\"9.4\" y2=\"9\"/><line x1=\"4.5\" y1=\"8.7\" x2=\"2.6\" y2=\"9\"/><line x1=\"4.5\" y1=\"8.7\" x2=\"5.2\" y2=\"10.5\"/><line x1=\"2.9\" y1=\"6\" x2=\"1.7\" y2=\"4.5\"/><line x1=\"2.9\" y1=\"6\" x2=\"1.7\" y2=\"7.5\"/><line x1=\"4.5\" y1=\"3.3\" x2=\"5.2\" y2=\"1.5\"/><line x1=\"4.5\" y1=\"3.3\" x2=\"2.6\" y2=\"3\"/><line x1=\"7.6\" y1=\"3.3\" x2=\"9.4\" y2=\"3\"/><line x1=\"7.6\" y1=\"3.3\" x2=\"6.8\" y2=\"1.5\"/></svg>WRITE SOON.</p></footer>",
+      "css": ".ds-footer{box-sizing:border-box;max-width:1460px;margin:0 auto;padding:16px 28px 24px;border-top:1px solid var(--line);display:flex;justify-content:center;color:var(--ink-3);font:400 12px/1.5 var(--mono);letter-spacing:.1em}.ds-footer-greeting{margin:0;text-align:center}.ds-greeting-sep{width:12px;height:12px;margin:0 10px;vertical-align:-2px;color:var(--signal);fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round}"
     },
     {
       "name": "Control Panel",
@@ -123,7 +130,7 @@
       "name": "Postcard Artifact",
       "kind": "custom",
       "refersTo": "postcard-artifact",
-      "description": "Signature printed card: survey grid, one of four rotating moon-and-aurora scenes with snow, pines and lit cabins, red registration brackets, and no printed greeting caption.",
+      "description": "Signature printed card: survey grid, one of eight rotating thematic winter scenes, red registration brackets, and no printed greeting caption.",
       "html": "<figure class=\"ds-postcard\"><div class=\"ds-postcard-sheet\"><div class=\"ds-postcard-top\"><span>WINTER DISPATCH / POSTCARD</span><span>NO. 001 · SEASON 26</span></div><div class=\"ds-postcard-stamp\">WINTER<br>POSTAGE PAID 26</div><div class=\"ds-postcard-greeting\">STAY WARM.<br>WRITE SOON.</div><div class=\"ds-postcard-rule\"></div><div class=\"ds-postcard-address\">TO / FROM</div></div></figure>",
       "css": ".ds-postcard{margin:0;max-width:840px;aspect-ratio:8/5;overflow:hidden;border:1px solid var(--line-strong);background:var(--card-bg);box-shadow:10px 14px 34px rgba(0,0,0,.55),0 0 0 1px rgba(255,107,107,.05)}.ds-postcard-sheet{position:relative;width:100%;height:100%;padding:4% 5%;box-sizing:border-box;color:var(--ink-2);font-family:var(--mono);background-image:linear-gradient(rgba(126,180,196,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(126,180,196,.055) 1px,transparent 1px);background-size:2.5% 4%}.ds-postcard-sheet::before,.ds-postcard-sheet::after{content:\"\";position:absolute;width:12px;height:12px;border:1.5px solid var(--signal)}.ds-postcard-sheet::before{top:2%;left:2%;border-right:0;border-bottom:0}.ds-postcard-sheet::after{bottom:2%;right:2%;border-left:0;border-top:0}.ds-postcard-top{display:flex;justify-content:space-between;color:var(--ink-2);font-size:11px;letter-spacing:.18em}.ds-postcard-stamp{position:absolute;top:7%;right:6%;width:16%;padding:10px 6px;box-sizing:border-box;background:#dbe9e6;color:#0b1a1c;border:1px solid #0b1a1c;font-size:9px;font-weight:700;line-height:1.6;text-align:center;letter-spacing:.08em}.ds-postcard-greeting{margin-top:8%;color:var(--signal);font-size:clamp(18px,4.4vw,52px);font-weight:700;line-height:1.39}.ds-postcard-rule{height:1px;margin-top:6%;background:var(--line-strong)}.ds-postcard-address{margin-top:3%;color:var(--ink-2);font-size:clamp(9px,2vw,24px);letter-spacing:.1em}"
     },
@@ -146,37 +153,37 @@
   ],
   "narrative": {
     "northStar": "The Dispatch Terminal",
-    "overview": "Winter Dispatch is an operator desk for sending a winter greeting, not a scrapbook. The studio is a near-black blue-charcoal instrument panel: dense monospaced type at small sizes, hairline rules, squared corners, and one red voice. Signal red is the primary font, the accent, the selection and focus ink, the live status and the single download action; pale ice ink carries the secondary hierarchy. The header holds the product name, an EN/RU switch and a sync state; the workbench holds a card and its controls; a status line confirms every edit.\n\nThe card is a separate material. It keeps its own darker paper, a 30px survey grid, a fine printed border with red corner registration brackets, and one of four authored moon-and-aurora winter scenes that rotate every seven seconds — each with its own moon, arcs, snow, pines and cabins. Eight authored stamp designs and an address block sit in the same monospace voice. The greeting is the one large display voice, printed in signal red; the card prints no GREETING caption of its own. The EN/RU switch translates the studio and the card's masthead, printed labels, stamp text and status words together, and the choice survives a reload. Because the preview is drawn directly into the canvas that downloads, warmth lives in the artifact while the studio stays legible and quiet.",
+    "overview": "Winter Dispatch is an operator desk for sending a winter greeting, not a scrapbook. The studio is a near-black blue-charcoal instrument panel: dense monospaced type at small sizes, hairline rules, squared corners, and one red voice. Signal red is the primary font, the accent, the selection and focus ink and the single download action; pale ice ink carries the secondary hierarchy. The header holds the vertically centred brand and an EN/RU switch; the workbench holds a card and its controls. Status messages are delivered to screen readers only, so the visible chrome stays quiet. The footer carries one centred rotating sample greeting with an authored red snowflake between its two halves instead of boilerplate notices.\n\nThe card is a separate material. It keeps its own darker paper, a 30px survey grid, a fine printed border with red corner registration brackets, and one of eight authored thematic winter compositions that rotate every seven seconds — observatory, snowstorm, city, forest, aurora, railway, celebration and lanterns. Eight authored stamp designs and an address block sit in the same monospace voice. The greeting is the one large display voice, printed in signal red; the card prints no GREETING caption of its own. The EN/RU switch translates the studio and the card's masthead, printed labels and stamp text together, and the choice survives a reload. Because the preview is drawn directly into the canvas that downloads, warmth lives in the artifact while the studio stays legible and quiet.",
     "keyCharacteristics": [
-      "Near-black blue-charcoal ground, signal-red primary font and accent, ice-white secondary ink, deep-red stamp artwork, amber warning ink.",
+      "Near-black blue-charcoal ground, signal-red primary font and accent, ice-white secondary ink, deep-red stamp artwork, no second accent hue.",
       "One mono family in both English and Russian, with Segoe UI in the stack for Cyrillic; hierarchy comes from size, weight and tracking, and the chosen language survives a reload.",
       "Hairline rules, square corners, a 2px radius only on text fields, and a 6/8/12/18/28px spacing rhythm.",
       "Two-panel workbench with the 360px rail on the right, eight 60×72px stamp previews in a 4×2 grid, and a live 2× canvas preview that is exactly the PNG.",
-      "The printed card has its own paper, grid, stamp block, red registration marks and localized inscriptions; one of four authored scenes rotates every seven seconds and the stage bar names it."
+      "The printed card has its own paper, grid, stamp block and red registration marks; one of eight themed scenes rotates every seven seconds and the stage bar names it.",
+      "The footer holds one centred 12px greeting split by an authored 12×12 red SVG snowflake; it follows the active scene and language rather than carrying notices."
     ],
     "rules": [
-      { "name": "The State Ink Rule", "body": "Signal red carries the primary voice, selection, focus, caret, live status and the single download action; deep red belongs to printed stamp art; amber appears only in warning status. Ice ink is a hierarchy tone, never an accent.", "section": "colors" },
+      { "name": "The State Ink Rule", "body": "Signal red carries the primary voice, selection, focus, caret, the LIVE marker and the single download action; deep red belongs to printed stamp and scene accents. Ice ink is a hierarchy tone, never an accent.", "section": "colors" },
       { "name": "The Readable Label Rule", "body": "Every label pair clears 4.5:1; the shipped verifier reports 17/17 pairs with a 4.76:1 floor (deep stamp red on pale paper). Signal red measures 6.14–7.03:1 on the dark surfaces. Atmosphere never buys a contrast exception.", "section": "colors" },
       { "name": "The One Voice Rule", "body": "One monospace family carries display, body, labels and print in both languages; contrast comes from scale, weight and tracking, never from introducing a second typeface.", "section": "typography" },
       { "name": "The Soft Lift Rule", "body": "Surfaces separate by wide, faint shadow and hairline rule; the card sits deepest, the rail next, the button shallowest.", "section": "elevation" },
-      { "name": "The Square Rule", "body": "Panels, tiles, buttons and the language switch are square; the 2px radius belongs only to text fields and textarea, and roundness beyond the 6px status dot belongs only to the printed card artwork.", "section": "shapes" },
-      { "name": "The Localized Artifact Rule", "body": "Switching language redraws the printed card from the same string table as the studio — masthead, issue line, TO/КОМУ and FROM/ОТ labels, message placeholder, stamp text and status words all follow the active language. The GREETING / ПРИВЕТСТВИЕ label remains a studio form label only; the card prints no such caption, in either language.", "section": "components" }
+      { "name": "The Square Rule", "body": "Panels, tiles, buttons, the language switch and the scene tag are square; the 2px radius belongs only to text fields and textarea, and roundness beyond the 6px LIVE dot belongs only to the printed card artwork.", "section": "shapes" },
+      { "name": "The Localized Artifact Rule", "body": "Switching language redraws the printed card from the same string table as the studio — masthead, issue line, TO/КОМУ and FROM/ОТ labels, message placeholder and stamp text all follow the active language. The GREETING / ПРИВЕТСТВИЕ label remains a studio form label only; the card prints no such caption, in either language.", "section": "components" }
     ],
     "dos": [
       "**Do** keep the preview and the PNG the same surface: draw once at 2× into the 2400×1500 canvas and export that canvas with `toBlob` / `toDataURL`.",
       "**Do** keep every label at 4.5:1 or better; the shipped floor is 4.76:1 and signal red is 6.14–7.03:1 on the dark surfaces.",
       "**Do** use the documented signal alpha ramp (0.05, 0.08, 0.14, 0.25, 0.30) and the deep-red 0.10 wash rather than introducing a new red.",
-      "**Do** keep English and Russian at parity: labels, placeholders, ARIA text, card inscriptions, status words and six index-aligned samples move together on a language switch, and the choice persists across reloads.",
+      "**Do** keep English and Russian at parity: labels, placeholders, ARIA text, card inscriptions and six index-aligned samples move together on a language switch, and the choice persists across reloads.",
       "**Do** keep the scene timer at seven seconds and restart it on every field edit; reduced motion still rotates the scene but skips the fade.",
-      "**Do** use 1px structural rules, 0px corners on panels, tiles and buttons, the 2px `--radius` only on text fields, and the 4×2 stamp grid with 60×72px thumbnails.",
-      "**Do** keep the authored-demo disclosure and the local-only notice in the footer; the samples and stamp art are demonstration content."
+      "**Do** use 1px structural rules, 0px corners on panels, tiles, buttons and the scene tag, the 2px `--radius` only on text fields, and the 4×2 stamp grid with 60×72px thumbnails."
     ],
     "donts": [
       "**Don't** screenshot the page or rebuild the card in a second renderer when downloading; the canvas is the artifact.",
       "**Don't** introduce a second typeface or leave printed card labels in the other language after a switch.",
       "**Don't** let a label drop below 4.5:1 to make the interface quieter.",
-      "**Don't** round the panels, tiles, buttons or language switch, or add a second accent hue; amber is the warning only.",
-      "**Don't** present the sample copy as real correspondence or imply the card is uploaded anywhere."
+      "**Don't** round the panels, tiles, buttons, language switch or scene tag, or add a second accent hue; the system has one red accent only.",
+      "**Don't** reintroduce boilerplate chrome or a text glyph in the footer; keep the single centred greeting with its authored SVG snowflake separator."
     ]
   }
 }
