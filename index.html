@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Winter Dispatch — Postcard Studio</title>
+  <meta name="description" content="Compose a winter postcard, choose a stamp, and download it as a PNG.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#studio" data-i18n="skip">Skip to composer</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-name" data-i18n="brand">WINTER DISPATCH</span>
+      <span class="brand-sub" data-i18n="brandSub">POSTCARD STUDIO</span>
+    </div>
+    <div class="topbar-meta">
+      <span class="season" data-i18n="season">SEASON / 26</span>
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="languageGroup">
+        <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <span class="status-pill" id="topStatus"><span class="status-dot" aria-hidden="true"></span><span id="topStatusText">READY</span></span>
+    </div>
+  </header>
+
+  <main id="studio" class="workbench">
+    <section class="stage" aria-labelledby="previewHeading">
+      <div class="stage-bar">
+        <h1 id="previewHeading" class="stage-title"><span data-i18n="preview">PREVIEW</span> <span class="stage-dim" data-i18n="previewDim">/ 2400 × 1500 PNG</span></h1>
+        <div class="stage-indicators">
+          <span class="scene-tag" id="sceneTag">SCENE 01/04</span>
+          <span class="live-tag"><span class="live-dot" aria-hidden="true"></span><span data-i18n="live">LIVE</span></span>
+        </div>
+      </div>
+
+      <div class="card-frame" id="cardFrame">
+        <canvas id="postcard" width="2400" height="1500" role="img" aria-label="Winter postcard preview"></canvas>
+        <span class="sweep" id="sweep" aria-hidden="true"></span>
+      </div>
+
+      <p class="stage-caption" data-i18n="caption">What you see here is exactly what downloads. No crops, no surprises.</p>
+    </section>
+
+    <aside class="controls" aria-label="Postcard composer" data-i18n-aria="composerLabel">
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="stampTitle">01 / STAMP</h2>
+          <span class="panel-hint" data-i18n="selectOne">SELECT ONE</span>
+        </div>
+        <fieldset class="stamp-group">
+          <legend class="sr-only" data-i18n="chooseStamp">Choose a stamp</legend>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="pine" checked>
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampPine">PINE</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="snow">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampSnow">SNOW</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="mug">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampMug">MUG</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="moon">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampMoon">MOON</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="star">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampStar">STAR</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="candle">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampCandle">CANDLE</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="bell">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampBell">BELL</span>
+          </label>
+          <label class="stamp-option">
+            <input type="radio" name="stamp" value="mitten">
+            <canvas class="stamp-thumb" width="380" height="456" aria-hidden="true"></canvas>
+            <span data-i18n="stampMitten">MITTEN</span>
+          </label>
+        </fieldset>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="messageTitle">02 / MESSAGE</h2>
+          <span class="counter" id="messageCount">0 / 120</span>
+        </div>
+        <label class="field">
+          <span class="field-label" data-i18n="greetingLabel">GREETING</span>
+          <textarea id="message" rows="4" maxlength="120" spellcheck="false" placeholder="Write a short winter greeting…" data-i18n-placeholder="messagePlaceholder">STAY WARM.
+WRITE SOON.</textarea>
+        </label>
+        <button class="ghost-button" type="button" id="shuffle" data-i18n="sample">TRY A SAMPLE GREETING</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="addressTitle">03 / ADDRESS</h2>
+          <span class="panel-hint" data-i18n="optional">OPTIONAL</span>
+        </div>
+        <label class="field">
+          <span class="field-label" data-i18n="to">TO</span>
+          <input id="recipient" type="text" maxlength="24" placeholder="Recipient" autocomplete="off" data-i18n-placeholder="recipientPlaceholder">
+        </label>
+        <label class="field">
+          <span class="field-label" data-i18n="from">FROM</span>
+          <input id="sender" type="text" maxlength="24" placeholder="Your name" autocomplete="off" data-i18n-placeholder="senderPlaceholder">
+        </label>
+      </div>
+
+      <div class="action-block">
+        <button class="download-button" type="button" id="download">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 2v10m0 0 4-4m-4 4L6 8M3 15v2h14v-2"/></svg>
+          <span data-i18n="download">DOWNLOAD PNG</span>
+        </button>
+        <p class="status-line" id="status" role="status" aria-live="polite">READY · PREVIEW UPDATED</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footerLeft">SAMPLE COPY AND STAMP ARTWORK ARE AUTHORED FOR DEMONSTRATION.</span>
+    <span data-i18n="footerRight">WINTER DISPATCH / LOCAL-ONLY · NOTHING IS UPLOADED</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

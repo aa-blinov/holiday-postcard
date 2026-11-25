@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T18:15:41Z",
+  "title": "Design System: Winter Dispatch / Зимняя доставка",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Ground", "canonical": "oklch(15.6% 0.014 248)", "tonalRamp": ["#0a0b0d", "#222529", "#3d4348", "#5b6269", "#7c838a", "#a0a6ac", "#c5cace", "#eceff1"] },
+      "panel": { "role": "neutral", "displayName": "Panel", "canonical": "oklch(19.3% 0.019 252)", "tonalRamp": ["#090b0e", "#21262b", "#3c434b", "#5a626c", "#7a838e", "#9ea6af", "#c4cad1", "#eceff2"] },
+      "raised": { "role": "neutral", "displayName": "Raised", "canonical": "oklch(22.6% 0.024 249)", "tonalRamp": ["#090b0e", "#20262c", "#3a434d", "#57636f", "#788490", "#9ba6b2", "#c2cad3", "#ebeff3"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "oklch(30.6% 0.029 245)", "tonalRamp": ["#080c0f", "#1e262d", "#37444e", "#546371", "#758593", "#99a7b4", "#c0cbd4", "#eaeff4"] },
+      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "oklch(38.4% 0.034 241)", "tonalRamp": ["#080c0f", "#1c262e", "#344450", "#506473", "#718595", "#96a8b6", "#becbd5", "#e9f0f5"] },
+      "signal": { "role": "primary", "displayName": "Signal Red", "canonical": "oklch(71.2% 0.181 23)", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-hover": { "role": "primary", "displayName": "Signal Hover", "canonical": "oklch(77.0% 0.136 21)", "tonalRamp": ["#190405", "#450f13", "#732126", "#9f3b3f", "#c55d5f", "#e48786", "#fab4b2", "#ffe4e3"] },
+      "signal-deep": { "role": "primary", "displayName": "Deep Stamp Red", "canonical": "oklch(52.6% 0.195 23)", "tonalRamp": ["#1e0002", "#500004", "#84000f", "#b51026", "#de4347", "#fc7572", "#ffaaa4", "#ffe0dc"] },
+      "signal-ink": { "role": "neutral", "displayName": "Signal Ink", "canonical": "oklch(15.5% 0.039 23)", "tonalRamp": ["#100909", "#302120", "#533b3a", "#765957", "#987a78", "#b99d9b", "#d8c3c2", "#f6eceb"] },
+      "ink": { "role": "primary", "displayName": "Primary Ink / Signal Red", "canonical": "oklch(71.2% 0.181 23)", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "ink-secondary": { "role": "neutral", "displayName": "Ice Ink", "canonical": "oklch(91.6% 0.015 218)", "tonalRamp": ["#090c0c", "#202628", "#3b4446", "#586367", "#798588", "#9da7aa", "#c3cbcd", "#ebeff0"] },
+      "ink-muted": { "role": "neutral", "displayName": "Muted Ink", "canonical": "oklch(79.0% 0.028 221)", "tonalRamp": ["#080c0e", "#1c272b", "#34454b", "#51656c", "#71868e", "#96a9af", "#beccd1", "#e9f0f2"] },
+      "ink-disabled": { "role": "neutral", "displayName": "Disabled Ink", "canonical": "oklch(75.0% 0.030 228)", "tonalRamp": ["#070c0e", "#1c272c", "#34454d", "#50656f", "#718690", "#95a9b2", "#beccd3", "#e9f0f3"] },
+      "amber": { "role": "secondary", "displayName": "Signal Amber", "canonical": "oklch(85.6% 0.126 76)", "tonalRamp": ["#140800", "#391e00", "#613700", "#885500", "#ac760f", "#cb9b53", "#e6c391", "#feecd3"] },
+      "signal-wash-05": { "role": "primary", "displayName": "Signal Red 5%", "canonical": "oklch(71.2% 0.181 23) / 0.05", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-wash-08": { "role": "primary", "displayName": "Signal Red 8%", "canonical": "oklch(71.2% 0.181 23) / 0.08", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-wash-14": { "role": "primary", "displayName": "Signal Red 14%", "canonical": "oklch(71.2% 0.181 23) / 0.14", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-wash-25": { "role": "primary", "displayName": "Signal Red 25%", "canonical": "oklch(71.2% 0.181 23) / 0.25", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-wash-30": { "role": "primary", "displayName": "Signal Red 30%", "canonical": "oklch(71.2% 0.181 23) / 0.30", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "signal-deep-wash-10": { "role": "primary", "displayName": "Deep Stamp Red 10%", "canonical": "oklch(52.6% 0.195 23) / 0.10", "tonalRamp": ["#1e0002", "#500004", "#84000f", "#b51026", "#de4347", "#fc7572", "#ffaaa4", "#ffe0dc"] },
+      "card-paper": { "role": "neutral", "displayName": "Card Paper", "canonical": "oklch(17.4% 0.018 249)", "tonalRamp": ["#090b0d", "#21262a", "#3c434a", "#5a626b", "#7a838d", "#9ea6af", "#c4cad0", "#eceff2"] },
+      "card-grid": { "role": "neutral", "displayName": "Card Grid", "canonical": "oklch(73.8% 0.061 218) / 0.055", "tonalRamp": ["#030d10", "#0d2931", "#1d4954", "#366a78", "#578b9a", "#81adbb", "#afcfd9", "#e2f2f7"] },
+      "card-rule": { "role": "neutral", "displayName": "Card Rule", "canonical": "oklch(35.7% 0.035 240)", "tonalRamp": ["#070c0f", "#1c272e", "#344450", "#4f6473", "#708695", "#95a8b6", "#bdcbd6", "#e8f0f5"] },
+      "card-ink": { "role": "primary", "displayName": "Card Ink / Signal Red", "canonical": "oklch(71.2% 0.181 23)", "tonalRamp": ["#1d0102", "#4d0008", "#800016", "#b0202d", "#d84a4d", "#f67a77", "#ffada8", "#ffe1de"] },
+      "card-label": { "role": "neutral", "displayName": "Card Label / Ice Ink", "canonical": "oklch(91.6% 0.015 218)", "tonalRamp": ["#090c0c", "#202628", "#3b4446", "#586367", "#798588", "#9da7aa", "#c3cbcd", "#ebeff0"] },
+      "card-muted": { "role": "neutral", "displayName": "Card Muted", "canonical": "oklch(75.7% 0.027 225)", "tonalRamp": ["#080c0e", "#1d272b", "#35454b", "#52656d", "#72868e", "#97a8b0", "#bfccd1", "#e9f0f3"] },
+      "stamp-paper": { "role": "neutral", "displayName": "Stamp Paper", "canonical": "oklch(92.3% 0.015 182)", "tonalRamp": ["#090c0b", "#202725", "#3b4442", "#586462", "#798583", "#9da8a5", "#c3cbc9", "#ebefef"] },
+      "stamp-ink": { "role": "neutral", "displayName": "Stamp Ink", "canonical": "oklch(20.5% 0.021 207)", "tonalRamp": ["#080c0c", "#1e2728", "#374547", "#546567", "#758688", "#99a8ab", "#c0cccd", "#eaf0f0"] },
+      "barcode-ink": { "role": "neutral", "displayName": "Barcode Ink", "canonical": "oklch(41.3% 0.040 226)", "tonalRamp": ["#060c0f", "#18282e", "#2e4650", "#496672", "#6a8895", "#8faab5", "#b9cdd5", "#e7f0f5"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Card Greeting", "purpose": "The one large display voice, printed in signal red at 56px in 1200×750 card units." },
+      "headline": { "displayName": "Stage Headline", "purpose": "PREVIEW / ПРЕДПРОСМОТР and PNG dimension in the workbench." },
+      "title": { "displayName": "Panel Title", "purpose": "Numbered control-panel headings in both languages." },
+      "body": { "displayName": "Body", "purpose": "Studio copy, buttons, inputs and textarea." },
+      "label": { "displayName": "Operator Label", "purpose": "Field names, language switch, header meta and the stage-bar scene tag." },
+      "meta": { "displayName": "Operator Meta", "purpose": "Hints, counters, stamp names, status line and footer notes at the 12px functional-text floor." },
+      "card-address": { "displayName": "Card Address", "purpose": "Recipient and sender values printed in ice ink on the card." }
+    },
+    "shadows": [
+      { "name": "card-frame", "value": "10px 14px 34px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 107, 107, 0.05)", "purpose": "Deepest lift, under the previewed postcard; the ring is the 5% signal-red wash." },
+      { "name": "controls-rail", "value": "8px 10px 28px rgba(0, 0, 0, 0.38)", "purpose": "Softer lift under the whole composer stack." },
+      { "name": "primary-button", "value": "0 3px 12px rgba(0, 0, 0, 0.4)", "purpose": "Shallow lift on the single action." },
+      { "name": "live-dot", "value": "0 0 0 2px rgba(255, 107, 107, 0.14)", "purpose": "14% signal-red state ring on live dots, not elevation." },
+      { "name": "selected-stamp", "value": "inset 0 0 0 1px rgba(255, 107, 107, 0.25)", "purpose": "25% signal-red inset ring on the checked stamp tile." }
+    ],
+    "motion": [
+      { "name": "state-transition", "value": "120ms ease", "purpose": "Border, background and colour changes on stamp tiles, ghost button and download button." },
+      { "name": "registration-sweep", "value": "520ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Signal-red sweep across the card frame on stamp change, sample load and language switch." },
+      { "name": "reduced-motion", "value": "animation-duration: 0.01ms !important; transition-duration: 0.01ms !important", "purpose": "Global override when prefers-reduced-motion is set; also suppresses the sweep entirely." },
+      { "name": "scene-cycle", "value": "7000ms", "purpose": "Four authored winter scenes rotate automatically; any field edit clears and restarts the timer." },
+      { "name": "scene-refresh-fade", "value": "460ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Short opacity and blur fade on scene change; skipped under reduced motion while the scene still changes." }
+    ],
+    "breakpoints": [
+      { "name": "single-column", "value": "980px" },
+      { "name": "compact", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Download Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single signal-red action that saves the previewed canvas as a PNG.",
+      "html": "<button class=\"ds-download\" type=\"button\"><svg class=\"ds-download-icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 2v10m0 0 4-4m-4 4L6 8M3 15v2h14v-2\"/></svg><span class=\"ds-download-label\">DOWNLOAD PNG</span></button>",
+      "css": ".ds-download{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px 16px;border:1px solid var(--signal);border-radius:0;background:var(--signal);color:var(--signal-ink);font:700 12px/1.5 var(--mono);letter-spacing:.14em;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.4);transition:transform 120ms ease,background 120ms ease}.ds-download-icon{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:square}.ds-download:hover{background:var(--signal-hover)}.ds-download:active{transform:translateY(1px)}.ds-download:focus-visible{outline:2px solid var(--signal);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outlined full-width button that loads an authored sample greeting in the active language.",
+      "html": "<button class=\"ds-ghost\" type=\"button\">TRY A SAMPLE GREETING</button>",
+      "css": ".ds-ghost{width:100%;padding:9px 11px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-2);font:400 11px/1.5 var(--mono);letter-spacing:.1em;text-align:center;cursor:pointer;transition:border-color 120ms ease,color 120ms ease}.ds-ghost:hover{border-color:var(--signal-hover);color:var(--signal-hover)}.ds-ghost:active{background:rgba(255,107,107,.08)}.ds-ghost:focus-visible{outline:2px solid var(--signal);outline-offset:3px}"
+    },
+    {
+      "name": "Stamp Option",
+      "kind": "chip",
+      "refersTo": "stamp-option-selected",
+      "description": "One of eight radio tiles in a 4×2 grid, with a 60×72px stamp thumbnail.",
+      "html": "<label class=\"ds-stamp-option\"><input class=\"ds-stamp-input\" type=\"radio\" name=\"ds-stamp\" checked><svg class=\"ds-stamp-thumb\" viewBox=\"0 0 60 72\" aria-hidden=\"true\"><rect x=\"1\" y=\"1\" width=\"58\" height=\"70\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M30 16 45 50H15Z\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M27 50h6v8h-6z\" fill=\"currentColor\"/></svg><span>PINE</span></label>",
+      "css": ".ds-stamp-option{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 3px 9px;border:1px solid var(--line);background:var(--raised);color:var(--ink-2);font:400 12px/1.5 var(--mono);letter-spacing:.08em;cursor:pointer;transition:border-color 120ms ease,background 120ms ease,color 120ms ease}.ds-stamp-input{position:absolute;opacity:0;width:1px;height:1px}.ds-stamp-thumb{width:60px;height:72px;display:block}.ds-stamp-option:hover{border-color:var(--line-strong);color:var(--signal)}.ds-stamp-option:has(input:checked){border-color:var(--signal);color:var(--signal);box-shadow:inset 0 0 0 1px rgba(255,107,107,.25)}.ds-stamp-option:has(input:focus-visible){outline:2px solid var(--signal);outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Raised, hairline-bordered text input with red text, red caret and a red focus state.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">TO</span><input class=\"ds-input\" type=\"text\" maxlength=\"24\" placeholder=\"Recipient\"></label>",
+      "css": ".ds-field{display:block;margin-bottom:12px}.ds-field-label{display:block;margin-bottom:6px;color:var(--ink-3);font:400 11px/1.5 var(--mono);letter-spacing:.14em}.ds-input{width:100%;box-sizing:border-box;background:var(--raised);border:1px solid var(--line-strong);border-radius:var(--radius,2px);color:var(--signal);font:400 13px/1.5 var(--mono);padding:10px 11px;caret-color:var(--signal)}.ds-input::placeholder{color:var(--ink-disabled);opacity:1}.ds-input:hover{border-color:var(--ink-3)}.ds-input:focus{border-color:var(--signal);outline:none;box-shadow:0 0 0 1px var(--signal)}"
+    },
+    {
+      "name": "Message Field",
+      "kind": "input",
+      "refersTo": "textarea",
+      "description": "Resizable bilingual greeting textarea with a 96px minimum height and 1.55 line step.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">GREETING</span><textarea class=\"ds-textarea\" rows=\"4\" maxlength=\"120\" placeholder=\"Write a short winter greeting…\">STAY WARM.\nWRITE SOON.</textarea></label>",
+      "css": ".ds-field{display:block;margin-bottom:12px}.ds-field-label{display:block;margin-bottom:6px;color:var(--ink-3);font:400 11px/1.5 var(--mono);letter-spacing:.14em}.ds-textarea{width:100%;box-sizing:border-box;min-height:96px;line-height:1.55;resize:vertical;background:var(--raised);border:1px solid var(--line-strong);border-radius:var(--radius,2px);color:var(--signal);font:400 13px/1.55 var(--mono);padding:10px 11px;caret-color:var(--signal)}.ds-textarea::placeholder{color:var(--ink-disabled);opacity:1}.ds-textarea:hover{border-color:var(--ink-3)}.ds-textarea:focus{border-color:var(--signal);outline:none;box-shadow:0 0 0 1px var(--signal)}"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "custom",
+      "refersTo": "status-pill",
+      "description": "Square header pill whose signal-red dot reports ready, synced, check or sent state in EN or RU.",
+      "html": "<span class=\"ds-status\"><span class=\"ds-status-dot\" aria-hidden=\"true\"></span><span>SYNCED</span></span>",
+      "css": ".ds-status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);padding:5px 10px;color:var(--signal);font:400 11px/1.5 var(--mono);letter-spacing:.1em}.ds-status-dot{width:6px;height:6px;flex:none;border-radius:50%;background:var(--signal);box-shadow:0 0 0 2px rgba(255,107,107,.14)}.ds-status.is-warning{color:var(--amber)}"
+    },
+    {
+      "name": "Control Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Numbered composer section on the panel ground, divided from its neighbours by a hairline rule.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-panel-head\"><h2 class=\"ds-panel-title\">03 / ADDRESS</h2><span class=\"ds-panel-hint\">OPTIONAL</span></div><span class=\"ds-panel-label\">TO</span><div class=\"ds-panel-input\">Recipient</div></section>",
+      "css": ".ds-panel{border:1px solid var(--line);background:var(--panel);padding:18px}.ds-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}.ds-panel-title{margin:0;color:var(--signal);font:700 15px/1.5 var(--mono);letter-spacing:.12em}.ds-panel-hint{color:var(--ink-3);font:400 12px/1.5 var(--mono);letter-spacing:.1em}.ds-panel-label{display:block;margin-bottom:6px;color:var(--ink-3);font:400 11px/1.5 var(--mono);letter-spacing:.14em}.ds-panel-input{background:var(--raised);border:1px solid var(--line-strong);border-radius:var(--radius,2px);color:var(--ink-disabled);font:400 13px/1.5 var(--mono);padding:10px 11px}"
+    },
+    {
+      "name": "Postcard Artifact",
+      "kind": "custom",
+      "refersTo": "postcard-artifact",
+      "description": "Signature printed card: survey grid, one of four rotating moon-and-aurora scenes with snow, pines and lit cabins, red registration brackets, and no printed greeting caption.",
+      "html": "<figure class=\"ds-postcard\"><div class=\"ds-postcard-sheet\"><div class=\"ds-postcard-top\"><span>WINTER DISPATCH / POSTCARD</span><span>NO. 001 · SEASON 26</span></div><div class=\"ds-postcard-stamp\">WINTER<br>POSTAGE PAID 26</div><div class=\"ds-postcard-greeting\">STAY WARM.<br>WRITE SOON.</div><div class=\"ds-postcard-rule\"></div><div class=\"ds-postcard-address\">TO / FROM</div></div></figure>",
+      "css": ".ds-postcard{margin:0;max-width:840px;aspect-ratio:8/5;overflow:hidden;border:1px solid var(--line-strong);background:var(--card-bg);box-shadow:10px 14px 34px rgba(0,0,0,.55),0 0 0 1px rgba(255,107,107,.05)}.ds-postcard-sheet{position:relative;width:100%;height:100%;padding:4% 5%;box-sizing:border-box;color:var(--ink-2);font-family:var(--mono);background-image:linear-gradient(rgba(126,180,196,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(126,180,196,.055) 1px,transparent 1px);background-size:2.5% 4%}.ds-postcard-sheet::before,.ds-postcard-sheet::after{content:\"\";position:absolute;width:12px;height:12px;border:1.5px solid var(--signal)}.ds-postcard-sheet::before{top:2%;left:2%;border-right:0;border-bottom:0}.ds-postcard-sheet::after{bottom:2%;right:2%;border-left:0;border-top:0}.ds-postcard-top{display:flex;justify-content:space-between;color:var(--ink-2);font-size:11px;letter-spacing:.18em}.ds-postcard-stamp{position:absolute;top:7%;right:6%;width:16%;padding:10px 6px;box-sizing:border-box;background:#dbe9e6;color:#0b1a1c;border:1px solid #0b1a1c;font-size:9px;font-weight:700;line-height:1.6;text-align:center;letter-spacing:.08em}.ds-postcard-greeting{margin-top:8%;color:var(--signal);font-size:clamp(18px,4.4vw,52px);font-weight:700;line-height:1.39}.ds-postcard-rule{height:1px;margin-top:6%;background:var(--line-strong)}.ds-postcard-address{margin-top:3%;color:var(--ink-2);font-size:clamp(9px,2vw,24px);letter-spacing:.1em}"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "custom",
+      "refersTo": "lang-switch",
+      "description": "Two-segment EN/RU control in the header; the active segment is a signal-red block with dark ink.",
+      "html": "<div class=\"ds-lang\" role=\"group\" aria-label=\"Language\"><button class=\"ds-lang-btn is-active\" type=\"button\" aria-pressed=\"true\">EN</button><button class=\"ds-lang-btn\" type=\"button\" aria-pressed=\"false\">RU</button></div>",
+      "css": ".ds-lang{display:inline-flex;border:1px solid var(--line-strong);background:var(--raised)}.ds-lang-btn{border:0;background:transparent;color:var(--ink-2);font:400 11px/1.5 var(--mono);letter-spacing:.12em;padding:5px 9px;cursor:pointer}.ds-lang-btn+.ds-lang-btn{border-left:1px solid var(--line-strong)}.ds-lang-btn:hover{color:var(--signal-hover)}.ds-lang-btn.is-active{background:var(--signal);color:var(--signal-ink);font-weight:700}.ds-lang-btn:focus-visible{outline:2px solid var(--signal);outline-offset:2px}"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "nav",
+      "refersTo": "skip-link",
+      "description": "Signal-red skip link with dark ink, revealed on focus at the top-left of the viewport.",
+      "html": "<a class=\"ds-skip\" href=\"#studio\">Skip to composer</a>",
+      "css": ".ds-skip{position:absolute;left:12px;top:-60px;z-index:10;padding:8px 14px;background:var(--signal);color:var(--signal-ink);font:700 12px/1.5 var(--mono);text-decoration:none}.ds-skip:focus,.ds-skip:focus-visible{top:12px;outline:2px solid var(--signal);outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dispatch Terminal",
+    "overview": "Winter Dispatch is an operator desk for sending a winter greeting, not a scrapbook. The studio is a near-black blue-charcoal instrument panel: dense monospaced type at small sizes, hairline rules, squared corners, and one red voice. Signal red is the primary font, the accent, the selection and focus ink, the live status and the single download action; pale ice ink carries the secondary hierarchy. The header holds the product name, an EN/RU switch and a sync state; the workbench holds a card and its controls; a status line confirms every edit.\n\nThe card is a separate material. It keeps its own darker paper, a 30px survey grid, a fine printed border with red corner registration brackets, and one of four authored moon-and-aurora winter scenes that rotate every seven seconds — each with its own moon, arcs, snow, pines and cabins. Eight authored stamp designs and an address block sit in the same monospace voice. The greeting is the one large display voice, printed in signal red; the card prints no GREETING caption of its own. The EN/RU switch translates the studio and the card's masthead, printed labels, stamp text and status words together, and the choice survives a reload. Because the preview is drawn directly into the canvas that downloads, warmth lives in the artifact while the studio stays legible and quiet.",
+    "keyCharacteristics": [
+      "Near-black blue-charcoal ground, signal-red primary font and accent, ice-white secondary ink, deep-red stamp artwork, amber warning ink.",
+      "One mono family in both English and Russian, with Segoe UI in the stack for Cyrillic; hierarchy comes from size, weight and tracking, and the chosen language survives a reload.",
+      "Hairline rules, square corners, a 2px radius only on text fields, and a 6/8/12/18/28px spacing rhythm.",
+      "Two-panel workbench with the 360px rail on the right, eight 60×72px stamp previews in a 4×2 grid, and a live 2× canvas preview that is exactly the PNG.",
+      "The printed card has its own paper, grid, stamp block, red registration marks and localized inscriptions; one of four authored scenes rotates every seven seconds and the stage bar names it."
+    ],
+    "rules": [
+      { "name": "The State Ink Rule", "body": "Signal red carries the primary voice, selection, focus, caret, live status and the single download action; deep red belongs to printed stamp art; amber appears only in warning status. Ice ink is a hierarchy tone, never an accent.", "section": "colors" },
+      { "name": "The Readable Label Rule", "body": "Every label pair clears 4.5:1; the shipped verifier reports 17/17 pairs with a 4.76:1 floor (deep stamp red on pale paper). Signal red measures 6.14–7.03:1 on the dark surfaces. Atmosphere never buys a contrast exception.", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "One monospace family carries display, body, labels and print in both languages; contrast comes from scale, weight and tracking, never from introducing a second typeface.", "section": "typography" },
+      { "name": "The Soft Lift Rule", "body": "Surfaces separate by wide, faint shadow and hairline rule; the card sits deepest, the rail next, the button shallowest.", "section": "elevation" },
+      { "name": "The Square Rule", "body": "Panels, tiles, buttons and the language switch are square; the 2px radius belongs only to text fields and textarea, and roundness beyond the 6px status dot belongs only to the printed card artwork.", "section": "shapes" },
+      { "name": "The Localized Artifact Rule", "body": "Switching language redraws the printed card from the same string table as the studio — masthead, issue line, TO/КОМУ and FROM/ОТ labels, message placeholder, stamp text and status words all follow the active language. The GREETING / ПРИВЕТСТВИЕ label remains a studio form label only; the card prints no such caption, in either language.", "section": "components" }
+    ],
+    "dos": [
+      "**Do** keep the preview and the PNG the same surface: draw once at 2× into the 2400×1500 canvas and export that canvas with `toBlob` / `toDataURL`.",
+      "**Do** keep every label at 4.5:1 or better; the shipped floor is 4.76:1 and signal red is 6.14–7.03:1 on the dark surfaces.",
+      "**Do** use the documented signal alpha ramp (0.05, 0.08, 0.14, 0.25, 0.30) and the deep-red 0.10 wash rather than introducing a new red.",
+      "**Do** keep English and Russian at parity: labels, placeholders, ARIA text, card inscriptions, status words and six index-aligned samples move together on a language switch, and the choice persists across reloads.",
+      "**Do** keep the scene timer at seven seconds and restart it on every field edit; reduced motion still rotates the scene but skips the fade.",
+      "**Do** use 1px structural rules, 0px corners on panels, tiles and buttons, the 2px `--radius` only on text fields, and the 4×2 stamp grid with 60×72px thumbnails.",
+      "**Do** keep the authored-demo disclosure and the local-only notice in the footer; the samples and stamp art are demonstration content."
+    ],
+    "donts": [
+      "**Don't** screenshot the page or rebuild the card in a second renderer when downloading; the canvas is the artifact.",
+      "**Don't** introduce a second typeface or leave printed card labels in the other language after a switch.",
+      "**Don't** let a label drop below 4.5:1 to make the interface quieter.",
+      "**Don't** round the panels, tiles, buttons or language switch, or add a second accent hue; amber is the warning only.",
+      "**Don't** present the sample copy as real correspondence or imply the card is uploaded anywhere."
+    ]
+  }
+}
